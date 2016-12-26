@@ -2,8 +2,8 @@
   "private": true,
   "name": "redux-seed",
   "version": "4.1.0",
-  "description": "Rubix Redux Starter Kit",
-  "homepage": "https://rubix410.sketchpixy.com/",
+  "description": "SOLID Redux Starter Kit",
+  "homepage": "https://BrandedSolid.com/",
   "watch": {
     "dev:server": "tmp/bundle.js"
   },

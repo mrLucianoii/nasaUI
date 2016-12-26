@@ -8,7 +8,6 @@ function nasaPortal(state = [], action) {
     case GET_GREETING:
       return action.result.data.greetings;
     case GET_NASAPIC:
-      console.log("Inside Switch", action.result.url)
       return action.result;
     default:
       return state;

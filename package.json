@@ -7,6 +7,7 @@
   "watch": {
     "dev:server": "tmp/bundle.js"
   },
+  
   "scripts": {
     "clean:dist": "rimraf dist",
     "clean:js": "rimraf public/js/main*.js && rimraf public/js/app.js && rimraf public/js/plugins.js && rimraf public/js/*.map",
@@ -100,5 +101,8 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-relay-plugin-loader": "^0.9.0"
+  },
+ "engines": {
+    "node": "4.1.1"
   }
 }

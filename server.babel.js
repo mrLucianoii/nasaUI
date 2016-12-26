@@ -27,8 +27,7 @@ app.use(compression());
 app.use(cookieParser());
 //app.use(express.static(path.join(process.cwd(), 'public')));
 app.use(express.static(__dirname + '/public'));
-app.use('/bower_components',  express.static(__dirname + '/bower_components'));
-
+app.use('/bower_components', express.static( path.join(__dirname, '/bower_components')));
 
 app.set('views', path.join(process.cwd(), 'views'));
 app.set('view engine', 'pug');

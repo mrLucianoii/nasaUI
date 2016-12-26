@@ -30,7 +30,7 @@ class Brand extends React.Component {
       <Navbar.Header {...this.props}>
         <Navbar.Brand tabIndex='-1'>
           <a href='#'>
-            <img src='/imgs/common/MyCosmos.svg' alt='rubix' width='auto' height='33' />
+            <img src='/imgs/app/myCosmos.svg' alt='MyCosmos Logo' width='auto' height='33' />
           </a>
         </Navbar.Brand>
       </Navbar.Header>

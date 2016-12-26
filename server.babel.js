@@ -25,8 +25,12 @@ const port = process.env.PORT || 8080;
 let app = express();
 app.use(compression());
 app.use(cookieParser());
-//app.use(express.static(path.join(process.cwd(), 'public')));
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(process.cwd(), 'public')));
+app.use('/imgs',express.static(path.join(__dirname, 'public/images')));
+app.use('/js',express.static(path.join(__dirname, 'public/javascripts')));
+app.use('/css',express.static(path.join(__dirname, 'public/stylesheets')));
+
+//app.use(express.static(__dirname + '/public'));
 //app.use("/bower_components", express.static(path.join(__dirname, 'bower_components')));
 app.set('views', path.join(process.cwd(), 'views'));
 app.set('view engine', 'pug');

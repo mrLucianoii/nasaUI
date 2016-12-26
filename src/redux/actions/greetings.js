@@ -1,5 +1,6 @@
 import {
-  GET_GREETING
+  GET_GREETING,
+  GET_NASAPIC,
 } from './actionTypes';
 
 import axios from 'axios';
@@ -10,6 +11,54 @@ let GraphQLEndpoint = GraphQLSettings.development.endpoint;
 
 if (process.env.NODE_ENV === 'production') {
   GraphQLEndpoint = GraphQLSettings.production.endpoint;
+}
+
+function getNasaTodayTest(inputMessage) {
+      let query = `
+    query nasaData($inputMessage: String) {
+      nasaPic {
+        nasa(message: $inputMessage)
+      }
+    }
+  `;
+
+  let variables = { inputMessage };
+
+  return dispatch => {
+    return axios.post(GraphQLEndpoint, {
+      query,
+      variables
+    }).then((result) => {
+      dispatch({
+        type: GET_NASAPIC,
+        result: result.data,
+      });
+    }).catch((error) => {
+      dispatch({
+        type: GET_NASAPIC,
+        error,
+      });
+    });
+  };
+}
+
+function getNasaToday() {
+      
+  return dispatch => {
+    return axios.get("https://gentle-crag-31085.herokuapp.com/api/apod")
+    .then((result) => {
+      console.log(result.data.url);
+      dispatch({
+        type: GET_NASAPIC,
+        result: result.data,
+      });
+    }).catch((error) => {
+      dispatch({
+        type: GET_NASAPIC,
+        error,
+      });
+    });
+  };
 }
 
 function getGreeting(inputMessage) {
@@ -43,4 +92,5 @@ function getGreeting(inputMessage) {
 
 module.exports = {
   getGreeting,
+  getNasaToday,
 };

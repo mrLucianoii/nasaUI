@@ -1,16 +1,20 @@
 import {
-  GET_GREETING
+  GET_GREETING,
+  GET_NASAPIC,
 } from '../actions/actionTypes';
 
-function greetings(state = [], action) {
+function nasaPortal(state = [], action) {
   switch(action.type) {
     case GET_GREETING:
       return action.result.data.greetings;
+    case GET_NASAPIC:
+      console.log("Inside Switch", action.result.url)
+      return action.result;
     default:
       return state;
   }
 }
 
 module.exports = {
-  greetings,
+  nasaPortal,
 };

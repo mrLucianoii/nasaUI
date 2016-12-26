@@ -15,7 +15,7 @@ import {
 @connect((state) => state)
 export default class Home extends React.Component {
   static fetchData(store) {
-    return store.dispatch(actions.getGreeting('Hello, World!'));
+    return store.dispatch(actions.getNasaToday());
   }
 
   render() {
@@ -26,7 +26,8 @@ export default class Home extends React.Component {
             <Grid>
               <Row>
                 <Col xs={12}>
-                  <p>{this.props.greetings.hello}</p>
+                  <h1>Punk Number 1</h1>
+                  <img src={this.props.nasaPortal.url} />
                 </Col>
               </Row>
             </Grid>

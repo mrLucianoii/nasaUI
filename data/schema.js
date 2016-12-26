@@ -39,6 +39,33 @@ const greetingsType = new GraphQLObjectType({
   })
 });
 
+const nasaData = new GraphQLObjectType({
+  name: 'Nasa',
+  fields: () => ({
+    nasa: {
+      type: GraphQLString,
+      args: {
+        message: {
+          type: GraphQLString
+        }
+      },
+      resolve(parentValue, { message }) {
+      return `received: ${message}`;
+      }
+    }
+  })
+});
+
+const queryNasa = new GraphQLObjectType({
+  name: 'Query',
+  fields: () => ({
+    nasaPic: {
+      type: nasaData,
+      resolve: () => "",
+    },
+  })
+});
+
 const queryType = new GraphQLObjectType({
   name: 'Query',
   fields: () => ({
@@ -51,6 +78,7 @@ const queryType = new GraphQLObjectType({
 
 export default new GraphQLSchema({
   query: queryType,
+  query: queryNasa,
 
   /* uncomment this line when you add your own mutations */
   // mutation: mutationType,

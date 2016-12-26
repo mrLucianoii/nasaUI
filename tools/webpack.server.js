@@ -18,7 +18,7 @@ var sourceMapSupportModule = "require('source-map-support').install({environment
 var output = { path: path.join(process.cwd(), 'tmp'), filename: 'bundle.js' };
 
 if (process.env.NO_OUTPUT_PATH) {
-  output = { filename: 'server.js' };
+  output = { filename: 'server.babel.js' };
 }
 
 var loaders = webpackCommonConfig.module.loaders.concat();

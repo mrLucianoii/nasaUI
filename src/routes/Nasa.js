@@ -19,20 +19,26 @@ export default class Nasa extends React.Component {
   }
 
   render() {
+    let imageStyle = {
+      width: "100%",
+      maxWidth: "300px",
+      height: 'auto',
+      float: 'left',
+      paddingRight: '33px'
+    }
     return (
       <PanelContainer>
         <Panel>
-          <PanelBody>
+          <PanelBody style={{
+            paddingBottom: '50px'
+          }}>
             <Grid>
               <Row>
                 <Col xs={12} style={{paddingBottom: '25px'}}>
                   <h1>Nasa Astronomy of the Day</h1>
-                  <h4>{this.props.title}</h4>
-                  <img id="picOfDay" src={this.props.nasaPortal.url} height="334" width="auto" alt="NASA Picture of the Day" 
-                    style={{
-                      float: 'left',
-                      paddingRight: '33px'
-                    }}/>
+                  <h4>{this.props.nasaPortal.title}</h4>
+                  <img id="picOfDay" src={this.props.nasaPortal.url}  alt="NASA Picture of the Day" 
+                    style={imageStyle}/>
                   <p>{this.props.nasaPortal.explanation}</p>
                 </Col>
               </Row>

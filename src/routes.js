@@ -1,35 +1,42 @@
-import React from 'react';
-import classNames from 'classnames';
-import { IndexRoute, Route } from 'react-router';
+import React from 'react'
+import classNames from 'classnames'
+import { IndexRoute, Route } from 'react-router'
 
-import { Grid, Row, Col, MainContainer } from '@sketchpixy/rubix';
+
+import { Grid, Row, Col, MainContainer } from '@sketchpixy/rubix'
 
 /* Common Components */
-
-import Sidebar from './common/sidebar';
-import Header from './common/header';
-import Footer from './common/footer';
+import TopBanner from './common/TopBanner'
+import Sidebar from './common/sidebar'
+import Header from './common/header'
+import Footer from './common/footer'
 
 /* Pages */
 
-import Home from './routes/Home';
-import Home2 from './routes/Home2';
+import Nasa from './routes/Nasa'
+import Home2 from './routes/Home2'
 
 class App extends React.Component {
   render() {
     return (
       <MainContainer {...this.props}>
-        <Sidebar />
-        <Header />
-        <div id='body'>
-          <Grid>
-            <Row>
-              <Col xs={12}>
-                {this.props.children}
-              </Col>
+          <TopBanner />
+          <Sidebar />
+          <Header/>
+          <div id='body' style={{
+            overflowY: 'auto',
+            height: '300px',
+            marginTop: '52px',
+            paddingTop: '36px'
+          }}>
+            <Grid>
+              <Row>
+                <Col xs={12}>
+                  {this.props.children}
+                </Col>
             </Row>
-          </Grid>
-        </div>
+            </Grid>
+          </div>
         <Footer />
       </MainContainer>
     );
@@ -38,9 +45,9 @@ class App extends React.Component {
 
 const routes = (
   <Route path='/' component={App}>
-    <IndexRoute component={Home} />
+    <IndexRoute component={Nasa} />
     <Route path='/home2' component={Home2} />
   </Route>
 );
 
-export default routes;
+export default routes

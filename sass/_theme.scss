@@ -1,4 +1,13 @@
 /* ADD/REMOVE/CHANGE THEMES HERE */
 
 // Giving the default theme a name
-@include theme-maker("default", ());
+@include theme-maker("solid", (
+  header (
+		bg #202020
+	),
+  sidebar (
+		bg #202020
+	)
+
+
+));

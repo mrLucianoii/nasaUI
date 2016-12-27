@@ -18,7 +18,7 @@ class ApplicationSidebar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div >
         <Grid>
           <Row>
             <Col xs={12}>
@@ -29,8 +29,8 @@ class ApplicationSidebar extends React.Component {
                   { /** Pages Section */ }
                   <div className='sidebar-header'>PAGES</div>
 
-                  <SidebarNavItem glyph='icon-fontello-gauge' name='Home' href='/' />
-                  <SidebarNavItem glyph='icon-fontello-gauge' name='Home 2' href='/home2' />
+                  <SidebarNavItem glyph='icon-fontello-gauge' name='Nasa' href='/' />
+                  <SidebarNavItem glyph='icon-fontello-gauge' name='Mars Rovers' href='/home2' />
                 </SidebarNav>
               </div>
             </Col>
@@ -60,7 +60,7 @@ class DummySidebar extends React.Component {
 export default class SidebarContainer extends React.Component {
   render() {
     return (
-      <div id='sidebar'>
+      <div id='sidebar' style={{top: '200px'}}>
         <div id='avatar'>
           <Grid>
             <Row className='fg-white'>
@@ -68,7 +68,7 @@ export default class SidebarContainer extends React.Component {
                 <img src='/imgs/app/avatars/avatar12.png' width='40' height='40' />
               </Col>
               <Col xs={8} collapseLeft id='avatar-col'>
-                <div style={{top: 23, fontSize: 16, lineHeight: 1, position: 'relative'}}>Welcome</div>
+                <div style={{top: 23, fontSize: 16, lineHeight: 1, position: 'relative'}}>My Friend, Welcome!</div>
                 <div>
                  
                 </div>

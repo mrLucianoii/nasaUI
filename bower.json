@@ -1,17 +1,16 @@
 {
-  "name": "redux-seed",
-  "description": "Rubix - ReactJS Admin Template",
+  "name": "OurCosmos",
+  "description": "Nasa Portal",
   "authors": [
-    "Sketchpixy <support@sketchpixy.com>"
+    "Luciano Aldana <Luciano@brandedsolid.com>"
   ],
-  "copyright": "SketchPixy LLP, email: support@sketchpixy.com",
+  "copyright": "",
   "keywords": [
-    "rubix",
-    "admin",
-    "sketchpixy",
-    "reactjs"
+    "Nasa",
+    "Astronomy",
+
   ],
-  "homepage": "http://rubix400.sketchpixy.com",
+  "homepage": "http://brandedsolid.com",
   "private": true,
   "ignore": [
     "**/.*",

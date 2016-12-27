@@ -28,9 +28,9 @@ class Brand extends React.Component {
   render() {
     return (
       <Navbar.Header {...this.props}>
-        <Navbar.Brand tabIndex='-1'>
+        <Navbar.Brand tabIndex='-1' style={{postion: 'relative'}}>
           <a href='#'>
-            <img src='/imgs/app/myCosmos.svg' alt='MyCosmos Logo' width='auto' height='33' />
+            <img src='/imgs/app/myCosmos.svg' alt='Our Cosmos Are In Us' width='auto' height='33' />
           </a>
         </Navbar.Brand>
       </Navbar.Header>
@@ -56,10 +56,10 @@ class HeaderNavigation extends React.Component {
 export default class Header extends React.Component {
   render() {
     return (
-      <Grid id='navbar' {...this.props}>
+      <Grid id='navbar' {...this.props} >
         <Row>
           <Col xs={12}>
-            <Navbar fixedTop fluid id='rubix-nav-header'>
+            <Navbar fixedTop fluid id='rubix-nav-header' style={{top: '200px'}}>
               <Row>
                 <Col xs={3} visible='xs'>
                   <SidebarBtn />

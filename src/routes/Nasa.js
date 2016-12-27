@@ -13,7 +13,7 @@ import {
 } from '@sketchpixy/rubix';
 
 @connect((state) => state)
-export default class Home extends React.Component {
+export default class Nasa extends React.Component {
   static fetchData(store) {
     return store.dispatch(actions.getNasaToday());
   }
@@ -25,9 +25,15 @@ export default class Home extends React.Component {
           <PanelBody>
             <Grid>
               <Row>
-                <Col xs={12}>
-                  <h1>Punk Number 1</h1>
-                  <img src={this.props.nasaPortal.url} />
+                <Col xs={12} style={{paddingBottom: '25px'}}>
+                  <h1>Nasa Astronomy of the Day</h1>
+                  <h4>{this.props.nasaPortal.title}</h4>
+                  <img id="picOfDay" src={this.props.nasaPortal.url} height="334" width="auto" alt="NASA Picture of the Day" 
+                    style={{
+                      float: 'left',
+                      paddingRight: '33px'
+                    }}/>
+                  <p>{this.props.nasaPortal.explanation}</p>
                 </Col>
               </Row>
             </Grid>

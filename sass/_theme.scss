@@ -2,12 +2,42 @@
 
 // Giving the default theme a name
 @include theme-maker("solid", (
+	theme (
+		bg #1E193F
+	),
+	body (
+		bg #010032
+	),
   header (
-		bg #202020
+		bg #262d47,
+		logout (
+				bg #181432
+			),
+			sidebar-btn (
+				bg #181432
+			)
 	),
   sidebar (
+		bg #3D337E,
+		avatar (
+			bg #181432
+		),
+		controls (
+			bg #5B4CBE,
+			border #f2f2f2,
+			btn (
+				color #f3f3f3,
+				active-bg #3D337E,
+				active-color #ffffff
+			)
+		)
+	),
+	components (
+		panel (
+			border #181432
+		)
+	),
+	footer (
 		bg #202020
 	)
-
-
 ));

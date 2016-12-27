@@ -19,7 +19,6 @@ export default class TopBanner extends React.Component {
     return store.dispatch(actions.getNasaToday());
    
   }
-
   render() {
     return (
     <Jumbotron style={{

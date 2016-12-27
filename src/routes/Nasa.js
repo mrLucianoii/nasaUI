@@ -27,7 +27,7 @@ export default class Nasa extends React.Component {
               <Row>
                 <Col xs={12} style={{paddingBottom: '25px'}}>
                   <h1>Nasa Astronomy of the Day</h1>
-                  <h4>{this.props.nasaPortal.title}</h4>
+                  <h4>{this.props.title}</h4>
                   <img id="picOfDay" src={this.props.nasaPortal.url} height="334" width="auto" alt="NASA Picture of the Day" 
                     style={{
                       float: 'left',

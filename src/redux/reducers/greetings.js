@@ -12,7 +12,7 @@ function nasaPortal(state = [], action) {
       return action.result;
     case SET_MARS:
         return {
-              image: action.marsData.json,
+              image: "comming soon",
               completed: true
           } 
     default:

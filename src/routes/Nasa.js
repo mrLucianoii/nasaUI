@@ -10,14 +10,25 @@ import {
   Panel,
   PanelBody,
   PanelContainer,
+  Button
 } from '@sketchpixy/rubix';
 
 @connect((state) => state)
 export default class Nasa extends React.Component {
-  static fetchData(store) {
-    return store.dispatch(actions.getNasaToday());
+  
+  constructor(props) {
+	  super(props);
+	  this.state = { showModal: false };
+
   }
 
+  close() {
+	  this.setState({ showModal: false });
+  }
+
+  open() {
+	  this.setState({ showModal: true });
+  }
   render() {
     let imageStyle = {
       width: "100%",
@@ -37,8 +48,7 @@ export default class Nasa extends React.Component {
                 <Col xs={12} style={{paddingBottom: '25px'}}>
                   <h1>Nasa Astronomy of the Day</h1>
                   <h4>{this.props.nasaPortal.title}</h4>
-                  <img id="picOfDay" src={this.props.nasaPortal.url}  alt="NASA Picture of the Day" 
-                    style={imageStyle}/>
+                  <img id="picOfDay" src={this.props.nasaPortal.url}  alt="NASA Picture of the Day" style={imageStyle}/>
                   <p>{this.props.nasaPortal.explanation}</p>
                 </Col>
               </Row>

@@ -28,7 +28,6 @@ function getNasaToday() {
   return dispatch => {
     return axios.get("https://gentle-crag-31085.herokuapp.com/api/apod")
     .then((result) => {
-      console.log(result.data)
       dispatch({
         type: GET_NASAPIC,
         result: result.data,
@@ -41,7 +40,6 @@ function getNasaToday() {
     });
   };
 }
-
 
 module.exports = {
   getNasaToday,

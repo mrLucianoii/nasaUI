@@ -25,10 +25,10 @@ import {
   Col } from '@sketchpixy/rubix';
 
 class Brand extends React.Component {
-  render() {
+  render() { 
      let imageStyle = {
       width: "100%",
-      maxWidth: "600px",
+      maxWidth: "700px",
       height: 'auto'
     }
     return (

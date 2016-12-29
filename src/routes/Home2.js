@@ -25,7 +25,7 @@ export default class Home extends React.Component {
             <Grid>
               <Row>
                 <Col xs={12}>
-                  <h1>{  }</h1>
+                  <h1>{ this.props.nasaPortal.image }</h1>
                   <p>Hi</p>
                 </Col>
               </Row>

@@ -2,7 +2,6 @@ import React from 'react'
 import classNames from 'classnames'
 import { IndexRoute, Route } from 'react-router'
 
-
 import { Grid, Row, Col, MainContainer } from '@sketchpixy/rubix'
 
 /* Common Components */

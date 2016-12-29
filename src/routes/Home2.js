@@ -15,9 +15,8 @@ import {
 @connect((state) => state)
 export default class Home extends React.Component {
   static fetchData(store) {
-    return store.dispatch(actions.getNasaToday());
+    return store.dispatch(actions.isMars());
   }
-
   render() {
     return (
       <PanelContainer>
@@ -26,7 +25,8 @@ export default class Home extends React.Component {
             <Grid>
               <Row>
                 <Col xs={12}>
-                  <p>{}</p>
+                  <h1>{  }</h1>
+                  <p>Hi</p>
                 </Col>
               </Row>
             </Grid>

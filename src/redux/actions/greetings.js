@@ -2,7 +2,7 @@ import {
   GET_GREETING,
   GET_NASAPIC,
   IS_TODAY,
-  IS_MARS,
+  SET_MARS
 } from './actionTypes';
 
 import axios from 'axios';
@@ -13,15 +13,6 @@ let GraphQLEndpoint = GraphQLSettings.development.endpoint;
 
 if (process.env.NODE_ENV === 'production') {
   GraphQLEndpoint = GraphQLSettings.production.endpoint;
-}
-
-function isMars(marsData){
-  
-  return {
-    type: IS_MARS,
-    json: marsData,
-    receivedAt: Date.now()
-  }
 }
 
 function getNasaToday() {   
@@ -41,6 +32,26 @@ function getNasaToday() {
   };
 }
 
+function isMars(){
+    // GET MARS DATA marsData.json = "Mars Data HI" 
+    
+    let marsData = {
+        json: undefined,
+        receivedAt: Date.now()    
+    }
+    if (typeof marsData === undefined){
+      axios.get("https://gentle-crag-31085.herokuapp.com/isMars")
+      .then((result) => {
+        marsData.json = result
+      })
+      .catch((error) => {
+        marsData.json = error
+      })
+  }  
+    return { type: SET_MARS, marsData }  
+}
+
 module.exports = {
   getNasaToday,
+  isMars
 };

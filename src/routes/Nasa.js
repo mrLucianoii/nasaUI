@@ -67,7 +67,7 @@ export default class Nasa extends React.Component {
                   <Button onClick={::this.open}>Enlarge Image</Button>
                   <p>{this.props.nasaPortal.explanation}</p>
 
-		            <Modal show={this.state.showModal} onHide={::this.close} width="90%">
+		            <Modal className="nasa" show={this.state.showModal} onHide={::this.close}>
                   <Modal.Header closeButton>
                       <Modal.Title>{this.props.nasaPortal.title}</Modal.Title>
                       </Modal.Header>

@@ -1,7 +1,6 @@
 import {
   GET_GREETING,
   GET_NASAPIC,
-  SET_MARS
 } from '../actions/actionTypes';
 
 function nasaPortal(state = [], action) {
@@ -10,16 +9,10 @@ function nasaPortal(state = [], action) {
       return action.result.data.greetings;
     case GET_NASAPIC:
       return action.result;
-    case SET_MARS:
-        return {
-              image: "coming soon",
-              completed: true
-          } 
     default:
       return state;
   }
 }
-
 
 module.exports = {
   nasaPortal,

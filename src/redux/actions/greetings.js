@@ -1,8 +1,6 @@
 import {
   GET_GREETING,
   GET_NASAPIC,
-  IS_TODAY,
-  SET_MARS
 } from './actionTypes';
 
 import axios from 'axios';
@@ -13,6 +11,35 @@ let GraphQLEndpoint = GraphQLSettings.development.endpoint;
 
 if (process.env.NODE_ENV === 'production') {
   GraphQLEndpoint = GraphQLSettings.production.endpoint;
+}
+
+function getNasaTodayTest(inputMessage) {
+      let query = `
+    query nasaData($inputMessage: String) {
+      nasaPic {
+        nasa(message: $inputMessage)
+      }
+    }
+  `;
+
+  let variables = { inputMessage };
+
+  return dispatch => {
+    return axios.post(GraphQLEndpoint, {
+      query,
+      variables
+    }).then((result) => {
+      dispatch({
+        type: GET_NASAPIC,
+        result: result.data,
+      });
+    }).catch((error) => {
+      dispatch({
+        type: GET_NASAPIC,
+        error,
+      });
+    });
+  };
 }
 
 function getNasaToday() {   
@@ -32,26 +59,36 @@ function getNasaToday() {
   };
 }
 
-function isMars(){
-    // GET MARS DATA marsData.json = "Mars Data HI" 
-    
-    let marsData = {
-        json: undefined,
-        receivedAt: Date.now()    
+function getGreeting(inputMessage) {
+  let query = `
+    query echoGreeting($inputMessage: String) {
+      greetings {
+        hello(message: $inputMessage)
+      }
     }
-    if (typeof marsData === undefined){
-      axios.get("https://gentle-crag-31085.herokuapp.com/isMars")
-      .then((result) => {
-        marsData.json = result
-      })
-      .catch((error) => {
-        marsData.json = error
-      })
-  }  
-    return { type: SET_MARS, marsData }  
+  `;
+
+  let variables = { inputMessage };
+
+  return dispatch => {
+    return axios.post(GraphQLEndpoint, {
+      query,
+      variables
+    }).then((result) => {
+      dispatch({
+        type: GET_GREETING,
+        result: result.data,
+      });
+    }).catch((error) => {
+      dispatch({
+        type: GET_GREETING,
+        error,
+      });
+    });
+  };
 }
 
 module.exports = {
+  getGreeting,
   getNasaToday,
-  isMars
 };

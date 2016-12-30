@@ -15,8 +15,9 @@ import {
 @connect((state) => state)
 export default class Home extends React.Component {
   static fetchData(store) {
-    return store.dispatch(actions.isMars());
+    return store.dispatch(actions.getGreeting('Greetings from Rubix :)'));
   }
+
   render() {
     return (
       <PanelContainer>
@@ -25,8 +26,7 @@ export default class Home extends React.Component {
             <Grid>
               <Row>
                 <Col xs={12}>
-                  <h1>{ this.props.nasaPortal.image }</h1>
-                  <p>Hi</p>
+                  <p>{this.props.nasaPortal.hello}</p>
                 </Col>
               </Row>
             </Grid>

@@ -1,5 +1,4 @@
-import greetings from './greetings'
-
+import greetings from './greetings';
 
 module.exports = {
   ...greetings,

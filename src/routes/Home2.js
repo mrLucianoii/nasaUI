@@ -15,7 +15,7 @@ import {
 @connect((state) => state)
 export default class Home extends React.Component {
   static fetchData(store) {
-    return store.dispatch(actions.getGreeting('Greetings from Rubix :)'));
+    return store.dispatch(actions.getNasaToday());
   }
 
   render() {
@@ -26,7 +26,7 @@ export default class Home extends React.Component {
             <Grid>
               <Row>
                 <Col xs={12}>
-                  <p>{this.props.nasaPortal.hello}</p>
+                  <p>{}</p>
                 </Col>
               </Row>
             </Grid>

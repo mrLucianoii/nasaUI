@@ -25,12 +25,17 @@ import {
   Col } from '@sketchpixy/rubix';
 
 class Brand extends React.Component {
-  render() {
+  render() { 
+     let imageStyle = {
+      width: "100%",
+      maxWidth: "700px",
+      height: 'auto'
+    }
     return (
       <Navbar.Header {...this.props}>
         <Navbar.Brand tabIndex='-1' style={{postion: 'relative'}}>
           <a href='#'>
-            <img src='/imgs/app/myCosmos.svg' alt='Our Cosmos Are In Us' width='auto' height='33' />
+            <img src='/imgs/app/myCosmos.svg' style={imageStyle} alt='Our Cosmos Are In Us' width='auto' height='33' />
           </a>
         </Navbar.Brand>
       </Navbar.Header>

@@ -19,7 +19,6 @@ export default class TopBanner extends React.Component {
     return store.dispatch(actions.getNasaToday());
    
   }
-
   render() {
     return (
     <Jumbotron style={{
@@ -30,7 +29,8 @@ export default class TopBanner extends React.Component {
       backgroundSize: 'cover',
       backgroundPosition: 'center center',
       overlow: 'hidden',
-      marginBottom: 0
+      marginBottom: 0,
+      zIndex: '2'
   }} >
       <h1 style={{
         color: '#ffffff',

@@ -46,6 +46,7 @@ function renderHTML(req, res) {
     } else if (redirectLocation) {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search);
     } else {
+     // console.log("server data output: ", data)
       res.render('index', {
         content: data.content,
         data: JSON.stringify(data.data).replace(/\//g, '\\/')

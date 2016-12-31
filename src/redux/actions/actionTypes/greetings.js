@@ -6,5 +6,6 @@ module.exports = {
   GET_NASAPIC: 'GET_NASAPIC',
   IS_TODAY: 'IS_TODAY',
   IS_MARS: 'IS_MARS',
-  SET_MARS: 'SET_MARS'
+  SET_MARS: 'SET_MARS',
+  SET_MARS_TEST: 'SET_MARS_TEST'
 };

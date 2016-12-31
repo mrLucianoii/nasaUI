@@ -2,7 +2,8 @@ import {
   GET_GREETING,
   GET_NASAPIC,
   IS_TODAY,
-  SET_MARS
+  SET_MARS,
+  SET_MARS_TEST
 } from './actionTypes';
 
 import axios from 'axios';
@@ -33,8 +34,7 @@ function getNasaToday() {
 }
 
 function isMars(){
-    // GET MARS DATA marsData.json = "Mars Data HI" 
-    
+    // GET MARS DATA marsData.json = "Mars Data HI"    
     let marsData = {
         json: undefined,
         receivedAt: Date.now()    
@@ -50,8 +50,13 @@ function isMars(){
   }  
     return { type: SET_MARS, marsData }  
 }
-
+function getMarsTest(textInput){
+  if (textInput === undefined)
+    textInput = "default Blab"
+  return { type: SET_MARS_TEST, text: textInput }
+}
 module.exports = {
   getNasaToday,
-  isMars
+  isMars,
+  getMarsTest
 };

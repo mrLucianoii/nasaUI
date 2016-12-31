@@ -1,7 +1,8 @@
 import {
   GET_GREETING,
   GET_NASAPIC,
-  SET_MARS
+  SET_MARS,
+  SET_MARS_TEST
 } from '../actions/actionTypes';
 
 function nasaPortal(state = [], action) {
@@ -11,13 +12,15 @@ function nasaPortal(state = [], action) {
     case GET_NASAPIC:
       //console.log(action);
       let tester = Object.assign({}, state, action);
-    //  console.log(tester);
+     console.log(tester);
       return Object.assign({}, state, action);
     case SET_MARS:
         return {
               image: action.marsData.json,
               completed: true
-          } 
+          } ;
+    case SET_MARS_TEST: 
+      return Object.assign({}, state, action);
     default:
       return state;
   }

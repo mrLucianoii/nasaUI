@@ -35,7 +35,12 @@ export default class Nasa extends React.Component {
 	  this.setState({ showModal: true });
   }
   static fetchData(store) {
-    return store.dispatch(actions.getNasaToday());
+   // store.dispatch(actions.getMarsTest())
+    return     store.dispatch(actions.getNasaToday())
+;
+  }
+  fireNew(){
+  //  return store.dispatch(action.getMarsTest("Hello Sir"));
   }
   render() {
     let imageStyle = {
@@ -66,8 +71,11 @@ export default class Nasa extends React.Component {
                   <img id="picOfDay" src={this.props.nasaPortal.result.url}  alt="NASA Picture of the Day" style={imageStyle}/>
                   <Button onClick={::this.open}>Enlarge Image</Button>
                   <p>{this.props.nasaPortal.result.explanation}</p>
-
-		            <Modal className="nasa" show={this.state.showModal} onHide={::this.close}>
+                  
+                  <button onClick={this.fireNew()}>Testing Rudux</button>
+                  <p>{this.props.nasaPortal.result.text}</p>
+		           
+                <Modal className="nasa" show={this.state.showModal} onHide={::this.close}>
                   <Modal.Header closeButton>
                       <Modal.Title>{this.props.nasaPortal.result.title}</Modal.Title>
                       </Modal.Header>

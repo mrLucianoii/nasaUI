@@ -17,7 +17,6 @@ import Home2 from './routes/Home2'
 
 class App extends React.Component {
   render() {
-    console.log(this.props)
     return (
       <MainContainer {...this.props}>
           <TopBanner />

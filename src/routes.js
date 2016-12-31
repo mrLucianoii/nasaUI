@@ -26,10 +26,8 @@ class App extends React.Component {
           <div id='body' style={{
             overflowY: 'auto',
             height: '300px',
-            top: '0',
             marginTop: '52px',
-            paddingTop: '36px',
-            zIndex: '1'
+            paddingTop: '36px'
           }}>
             <Grid>
               <Row>

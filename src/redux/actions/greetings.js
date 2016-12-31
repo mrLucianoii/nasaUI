@@ -1,8 +1,6 @@
 import {
   GET_GREETING,
   GET_NASAPIC,
-  IS_TODAY,
-  IS_MARS,
 } from './actionTypes';
 
 import axios from 'axios';
@@ -15,13 +13,33 @@ if (process.env.NODE_ENV === 'production') {
   GraphQLEndpoint = GraphQLSettings.production.endpoint;
 }
 
-function isMars(marsData){
-  
-  return {
-    type: IS_MARS,
-    json: marsData,
-    receivedAt: Date.now()
-  }
+function getNasaTodayTest(inputMessage) {
+      let query = `
+    query nasaData($inputMessage: String) {
+      nasaPic {
+        nasa(message: $inputMessage)
+      }
+    }
+  `;
+
+  let variables = { inputMessage };
+
+  return dispatch => {
+    return axios.post(GraphQLEndpoint, {
+      query,
+      variables
+    }).then((result) => {
+      dispatch({
+        type: GET_NASAPIC,
+        result: result.data,
+      });
+    }).catch((error) => {
+      dispatch({
+        type: GET_NASAPIC,
+        error,
+      });
+    });
+  };
 }
 
 function getNasaToday() {   
@@ -41,6 +59,36 @@ function getNasaToday() {
   };
 }
 
+function getGreeting(inputMessage) {
+  let query = `
+    query echoGreeting($inputMessage: String) {
+      greetings {
+        hello(message: $inputMessage)
+      }
+    }
+  `;
+
+  let variables = { inputMessage };
+
+  return dispatch => {
+    return axios.post(GraphQLEndpoint, {
+      query,
+      variables
+    }).then((result) => {
+      dispatch({
+        type: GET_GREETING,
+        result: result.data,
+      });
+    }).catch((error) => {
+      dispatch({
+        type: GET_GREETING,
+        error,
+      });
+    });
+  };
+}
+
 module.exports = {
+  getGreeting,
   getNasaToday,
 };

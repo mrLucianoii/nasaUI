@@ -16,7 +16,8 @@ import {
 @connect((state) => state)
 export default class TopBanner extends React.Component {
   static fetchData(store) {
-    return store.dispatch(actions.getNasaToday());
+    store.dispatch(actions.getNasaToday())
+    return store;
    
   }
   render() {
@@ -24,7 +25,7 @@ export default class TopBanner extends React.Component {
     <Jumbotron style={{
       top: 0, 
       height: 222, 
-      backgroundImage:'url(' + this.props.nasaPortal.url + ')', 
+      backgroundImage:'url(' + this.props.nasaPortal.result.url + ')', 
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundPosition: 'center center',

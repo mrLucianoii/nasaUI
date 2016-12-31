@@ -9,7 +9,10 @@ function nasaPortal(state = [], action) {
     case GET_GREETING:
       return action.result.data.greetings;
     case GET_NASAPIC:
-      return action.result;
+      //console.log(action);
+      let tester = Object.assign({}, state, action);
+    //  console.log(tester);
+      return Object.assign({}, state, action);
     case SET_MARS:
         return {
               image: action.marsData.json,
@@ -19,7 +22,11 @@ function nasaPortal(state = [], action) {
       return state;
   }
 }
-
+function nasaApp (state = {}, action){
+  return {
+    nas
+  }
+}
 
 module.exports = {
   nasaPortal,

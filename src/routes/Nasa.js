@@ -38,9 +38,6 @@ export default class Nasa extends React.Component {
    // store.dispatch(actions.getMarsTest())
     return store.dispatch(actions.getNasaToday())
   }
-  fireNew(){
-  //  return store.dispatch(action.getMarsTest("Hello Sir"));
-  }
   render() {
     let { nasaPortal, dispatch } = this.props;
 	  let { result, error } = nasaPortal
@@ -61,9 +58,9 @@ export default class Nasa extends React.Component {
 
     return (
       <PanelContainer>
-          { console.log("Inside AllTodos-->todo: ", this.props) }
-          { console.log("Inside AllTodos-->result: ", result) }
-          { console.log("Inside AllTodos-->result: ", result[0].url) }
+          { console.log("Inside All Props-->todo: ", this.props) }
+          { console.log("Inside nasaPortal-->result: ", result) }
+          { console.log("Inside nasaPortal.prop: ", result[0].url) }
 
         <Panel>
           <PanelBody style={{
@@ -77,10 +74,7 @@ export default class Nasa extends React.Component {
                   <img id="picOfDay" src={result[0].url}  alt="NASA Picture of the Day" style={imageStyle}/>
                   <Button onClick={::this.open}>Enlarge Image</Button>
                   <p>{result[0].explanation}</p>
-                  
-                  <button onClick={this.fireNew()}>Testing Rudux</button>
-                  <p>{result[0].text}</p>
-		           
+            		           
                 <Modal className="nasa" show={this.state.showModal} onHide={::this.close}>
                   <Modal.Header closeButton>
                       <Modal.Title>{result[0].title}</Modal.Title>

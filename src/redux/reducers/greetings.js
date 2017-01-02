@@ -11,9 +11,15 @@ function nasaPortal(state = [], action) {
       return action.result.data.greetings;
     case GET_NASAPIC:
       //console.log(action);
-      let tester = Object.assign({}, state, action);
+      let tester = Object.assign({}, state.result, action.result);
      console.log(tester);
-      return Object.assign({}, state, action);
+      return {
+        result: [
+          action.result,
+          ...state.result,
+
+        ]
+      };
     case SET_MARS:
         return {
               image: action.marsData.json,

@@ -37,12 +37,14 @@ export default class Nasa extends React.Component {
   static fetchData(store) {
    // store.dispatch(actions.getMarsTest())
     return     store.dispatch(actions.getNasaToday())
-;
   }
   fireNew(){
   //  return store.dispatch(action.getMarsTest("Hello Sir"));
   }
   render() {
+    let { nasaPortal, dispatch } = this.props;
+	  let { result, error } = nasaPortal
+
     let imageStyle = {
       width: "100%",
       maxWidth: "300px",
@@ -59,6 +61,10 @@ export default class Nasa extends React.Component {
 
     return (
       <PanelContainer>
+          { console.log("Inside AllTodos-->todo: ", this.props) }
+          { console.log("Inside AllTodos-->result: ", result) }
+          { console.log("Inside AllTodos-->result: ", nasaPortal.url) }
+
         <Panel>
           <PanelBody style={{
             paddingBottom: '50px'

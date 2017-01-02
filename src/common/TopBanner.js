@@ -16,9 +16,7 @@ import {
 @connect((state) => state)
 export default class TopBanner extends React.Component {
   static fetchData(store) {
-    return store.dispatch(actions.getNasaToday())
-;
-   
+    return store.dispatch(actions.getNasaToday())  
   }
   render() {
     return (
@@ -27,7 +25,7 @@ export default class TopBanner extends React.Component {
       width: '100%',
       top: 0, 
       height: "222px", 
-      backgroundImage:'url(' + this.props.nasaPortal.url + ')', 
+      backgroundImage:'url(' + this.props.nasaPortal.result.url + ')', 
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundPosition: 'center center',

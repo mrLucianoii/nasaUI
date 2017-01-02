@@ -14,8 +14,11 @@ function nasaPortal(state = [], action) {
       let apod = Object.assign({}, state.result, action.result);
       return {
         result: [
-          action.result,
-          ...state.result
+           {
+            type: action.type,
+            apod: action.result
+          },
+          ...state.result,
         ]
       };
     case SET_MARS:

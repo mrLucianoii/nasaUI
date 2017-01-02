@@ -17,6 +17,9 @@ html.touchevents #body > div {
 html.touchevents #body {
     padding-top: 199px !important;
 }
+#sidebar.leave {
+    top: 0;
+}
 @media (max-width: 320px){
 
 }

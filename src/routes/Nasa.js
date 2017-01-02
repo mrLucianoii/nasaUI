@@ -35,12 +35,12 @@ export default class Nasa extends React.Component {
 	  this.setState({ showModal: true });
   }
   static fetchData(store) {
-   // store.dispatch(actions.getMarsTest())
     return store.dispatch(actions.getNasaToday())
   }
   render() {
     let { nasaPortal, dispatch } = this.props;
 	  let { result, error } = nasaPortal
+    let { apod } = result[0]
 
     let imageStyle = {
       width: "100%",
@@ -60,7 +60,7 @@ export default class Nasa extends React.Component {
       <PanelContainer>
           { console.log("Inside All Props-->todo: ", this.props) }
           { console.log("Inside nasaPortal-->result: ", result) }
-          { console.log("Inside nasaPortal.prop: ", result[0].url) }
+          { console.log("Inside nasaPortal.prop: ", apod.url) }
 
         <Panel>
           <PanelBody style={{
@@ -70,17 +70,17 @@ export default class Nasa extends React.Component {
               <Row>
                 <Col xs={12} style={{paddingBottom: '25px'}}>
                   <h1>Nasa Astronomy of the Day</h1>
-                  <h4>{result[0].title}</h4>
-                  <img id="picOfDay" src={result[0].url}  alt="NASA Picture of the Day" style={imageStyle}/>
+                  <h4>{apod.title}</h4>
+                  <img id="picOfDay" src={apod.url}  alt="NASA Picture of the Day" style={imageStyle}/>
                   <Button onClick={::this.open}>Enlarge Image</Button>
-                  <p>{result[0].explanation}</p>
+                  <p>{apod.explanation}</p>
             		           
                 <Modal className="nasa" show={this.state.showModal} onHide={::this.close}>
                   <Modal.Header closeButton>
-                      <Modal.Title>{result[0].title}</Modal.Title>
+                      <Modal.Title>{apod.title}</Modal.Title>
                       </Modal.Header>
                       <Modal.Body>
-                        <img id="picOfDay" src={result[0].url}  alt="NASA Picture of the Day" style={imageFull}/>
+                        <img id="picOfDay" src={apod.url}  alt="NASA Picture of the Day" style={imageFull}/>
 
                       </Modal.Body>
                       <Modal.Footer>

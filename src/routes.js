@@ -13,7 +13,7 @@ import Footer from './common/footer'
 /* Pages */
 
 import Nasa from './routes/Nasa'
-import Home2 from './routes/Home2'
+import Curiosity from './routes/Curiosity'
 
 class App extends React.Component {
   render() {
@@ -47,7 +47,7 @@ class App extends React.Component {
 const routes = (
   <Route path='/' component={App}>
     <IndexRoute component={Nasa} />
-    <Route path='/home2' component={Home2} />
+    <Route path='/curiosity' component={Curiosity} />
   </Route>
 );
 

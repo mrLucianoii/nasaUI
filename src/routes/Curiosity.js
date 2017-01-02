@@ -14,9 +14,9 @@ import {
 
 @connect((state) => state)
 export default class Home extends React.Component {
- /* static fetchData(store) {
-    return store.dispatch(actions.isMars());
-  }*/
+  static fetchData(store) {
+    return store.dispatch(actions.getNasaToday())
+  }
   render() {
     return (
       <PanelContainer>

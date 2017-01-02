@@ -26,7 +26,7 @@ class App extends React.Component {
             overflowY: 'auto',
             top: '0',
             marginTop: '52px',
-            paddingTop: '36px',
+            paddingTop: '241px !Important',
             zIndex: '1'
           }}>
             <Grid>

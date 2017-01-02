@@ -22,16 +22,18 @@ export default class TopBanner extends React.Component {
   render() {
     return (
     <Jumbotron style={{
+      position: "fixed",
+      width: '100%',
       top: 0, 
-      height: 222, 
+      height: "222px", 
       backgroundImage:'url(' + this.props.nasaPortal.url + ')', 
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundPosition: 'center center',
       overlow: 'hidden',
-      marginBottom: 0,
-      zIndex: '2'
-  }} >
+      zIndex: '2',
+      marginBottom: '0'
+  }} className="nasaJumbo" >
       <h1 style={{
         color: '#ffffff',
         paddingLeft: 34,

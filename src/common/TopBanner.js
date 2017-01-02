@@ -19,13 +19,16 @@ export default class TopBanner extends React.Component {
     return store.dispatch(actions.getNasaToday())  
   }
   render() {
+    let { nasaPortal, dispatch } = this.props
+	  let { result, error } = nasaPortal
+
     return (
     <Jumbotron style={{
       position: "fixed",
       width: '100%',
       top: 0, 
       height: "222px", 
-      backgroundImage:'url(' + this.props.nasaPortal.result.url + ')', 
+      backgroundImage:'url(' + result[0].url + ')', 
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundPosition: 'center center',
@@ -37,7 +40,7 @@ export default class TopBanner extends React.Component {
         color: '#ffffff',
         paddingLeft: 34,
         bottom: 0,
-      }}>{this.props.nasaPortal.result.title}</h1>
+      }}>{result[0].title}</h1>
      </Jumbotron>
     );
   }

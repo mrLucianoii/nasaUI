@@ -36,7 +36,7 @@ export default class Nasa extends React.Component {
   }
   static fetchData(store) {
    // store.dispatch(actions.getMarsTest())
-    return     store.dispatch(actions.getNasaToday())
+    return store.dispatch(actions.getNasaToday())
   }
   fireNew(){
   //  return store.dispatch(action.getMarsTest("Hello Sir"));
@@ -63,7 +63,7 @@ export default class Nasa extends React.Component {
       <PanelContainer>
           { console.log("Inside AllTodos-->todo: ", this.props) }
           { console.log("Inside AllTodos-->result: ", result) }
-          { console.log("Inside AllTodos-->result: ", nasaPortal.url) }
+          { console.log("Inside AllTodos-->result: ", result[0].url) }
 
         <Panel>
           <PanelBody style={{
@@ -73,20 +73,20 @@ export default class Nasa extends React.Component {
               <Row>
                 <Col xs={12} style={{paddingBottom: '25px'}}>
                   <h1>Nasa Astronomy of the Day</h1>
-                  <h4>{this.props.nasaPortal.result.title}</h4>
-                  <img id="picOfDay" src={this.props.nasaPortal.result.url}  alt="NASA Picture of the Day" style={imageStyle}/>
+                  <h4>{result[0].title}</h4>
+                  <img id="picOfDay" src={result[0].url}  alt="NASA Picture of the Day" style={imageStyle}/>
                   <Button onClick={::this.open}>Enlarge Image</Button>
-                  <p>{this.props.nasaPortal.result.explanation}</p>
+                  <p>{result[0].explanation}</p>
                   
                   <button onClick={this.fireNew()}>Testing Rudux</button>
-                  <p>{this.props.nasaPortal.result.text}</p>
+                  <p>{result[0].text}</p>
 		           
                 <Modal className="nasa" show={this.state.showModal} onHide={::this.close}>
                   <Modal.Header closeButton>
-                      <Modal.Title>{this.props.nasaPortal.result.title}</Modal.Title>
+                      <Modal.Title>{result[0].title}</Modal.Title>
                       </Modal.Header>
                       <Modal.Body>
-                        <img id="picOfDay" src={this.props.nasaPortal.result.url}  alt="NASA Picture of the Day" style={imageFull}/>
+                        <img id="picOfDay" src={result[0].url}  alt="NASA Picture of the Day" style={imageFull}/>
 
                       </Modal.Body>
                       <Modal.Footer>

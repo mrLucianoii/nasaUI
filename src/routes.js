@@ -24,10 +24,9 @@ class App extends React.Component {
           <Header/>
           <div id='body' style={{
             overflowY: 'auto',
-            height: '300px',
             top: '0',
             marginTop: '52px',
-            paddingTop: '36px',
+            paddingTop: '241px !Important',
             zIndex: '1'
           }}>
             <Grid>

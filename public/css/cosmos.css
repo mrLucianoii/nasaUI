@@ -1,3 +1,22 @@
+html.solid {
+   /* overflow: hidden;*/
+}
 .nasa .modal-dialog {
     width: 93%;
+}
+html.touchevents #body {
+    position: relative !important;
+    
+}
+html.solid body #rubix-nav-header {
+}
+
+html.touchevents #body > div {
+    position: relative;
+}
+html.touchevents #body {
+    padding-top: 199px !important;
+}
+@media (max-width: 320px){
+
 }

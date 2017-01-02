@@ -60,11 +60,15 @@ class HeaderNavigation extends React.Component {
 
 export default class Header extends React.Component {
   render() {
+    let navStyle = {
+      paddingLeft: 0,
+      paddingRight: 0
+    }
     return (
-      <Grid id='navbar' {...this.props} >
+      <Grid id='navbar' {...this.props} style={ navStyle } >
         <Row>
           <Col xs={12}>
-            <Navbar fixedTop fluid id='rubix-nav-header' style={{top: '200px'}}>
+            <Navbar fixedTop id='rubix-nav-header' style={{top: '200px'}}>
               <Row>
                 <Col xs={3} visible='xs'>
                   <SidebarBtn />

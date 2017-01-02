@@ -11,14 +11,14 @@ function nasaPortal(state = [], action) {
       return action.result.data.greetings;
     case GET_NASAPIC:
       //console.log(action);
-      let apod = Object.assign({}, state.result, action.result);
+      //let test = Object.assign({}, state.result, action.result);
       return {
         result: [
            {
             type: action.type,
             apod: action.result
-          },
-          ...state.result,
+          }
+         // ...state.result,
         ]
       };
     case SET_MARS:

@@ -58,9 +58,9 @@ export default class Nasa extends React.Component {
 
     return (
       <PanelContainer>
-          { console.log("Inside All Props-->todo: ", this.props) }
-          { console.log("Inside nasaPortal-->result: ", result) }
-          { console.log("Inside nasaPortal.prop: ", apod.url) }
+          { /*console.log("Inside All Props-->todo: ", this.props)*/ }
+          { /*console.log("Inside nasaPortal-->result: ", result)*/ }
+          { /*console.log("Inside nasaPortal.prop: ", apod.url)*/ }
 
         <Panel>
           <PanelBody style={{

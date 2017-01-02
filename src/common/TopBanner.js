@@ -22,7 +22,7 @@ export default class TopBanner extends React.Component {
     let { nasaPortal, dispatch } = this.props
 	  let { result, error } = nasaPortal
     let { apod } = result[0]
-    console.log( result )
+    console.log("TopBanner Result Obj: ", result )
 
     return (
     <Jumbotron style={{

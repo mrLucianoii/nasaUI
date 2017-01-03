@@ -28,7 +28,7 @@ export default class SideControler extends React.Component {
         return (
             <Form>
                 <FormGroup controlId="formControlsText">
-                    <ControlLabel>Enter a Sol (feature comming soon)</ControlLabel>
+                    <ControlLabel>Enter a Sol (feature coming soon)</ControlLabel>
 	                 <FormControl 
                      type="text" 
                      value={this.state.value}

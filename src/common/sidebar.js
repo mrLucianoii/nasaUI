@@ -5,8 +5,9 @@ import {
   SidebarControls, SidebarControlBtn,
   LoremIpsum, Grid, Row, Col, FormControl,
   Label, Progress, Icon,
-  SidebarDivider
+  SidebarDivider, Button
 } from '@sketchpixy/rubix'
+import SideControler from '../components/SideControler'
 
 import { Link, withRouter } from 'react-router'
 
@@ -31,6 +32,8 @@ class ApplicationSidebar extends React.Component {
                   <SidebarNavItem glyph='icon-fontello-gauge' name='Nasa' href='/' />
                   <SidebarNavItem glyph='icon-fontello-gauge' name='Curiosity' href='/curiosity' />
                 </SidebarNav>
+                <SideControler />
+
               </div>
             </Col>
           </Row>

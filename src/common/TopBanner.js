@@ -15,7 +15,6 @@ import {
 @connect((state) => state)
 export default class TopBanner extends React.Component {
   render() {
-    console.log("banner props: ", this.props)
     let { nasaPortal, dispatch, routing } = this.props
 	  let { result, error } = nasaPortal
     let { apod } = result[0]

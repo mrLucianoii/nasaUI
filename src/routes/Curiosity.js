@@ -17,15 +17,20 @@ import {
 @connect((state) => state)
 export default class Curiosity extends React.Component {
   static fetchData(store) {   
-    // Required Dispatch because TopBanner is top: -200px
+    // getNasaToday Required Dispatch because TopBanner is top: -200px
      store.dispatch(actions.getNasaToday())
     return store.dispatch(actions.getMarsImagesBySol())
   
 }
   render() {
     let { curiosityStore , dispatch } = this.props
-   // curiosityStore.dispatch(actions.getMarsImagesBySol())
-    console.log("Inside Curiosity obj.props: ", this.props)
+    let imageList = curiosityStore.result[0].imageList.photos
+    
+    if ( imageList.length > 30 )
+      imageList = imageList.splice(0, 27)
+
+    // Future: Write an algorithm that splices large list and lazyloads
+  
     let jumboStyle = {
       position: "relative",
       width: '100%',
@@ -52,11 +57,19 @@ export default class Curiosity extends React.Component {
         </Jumbotron>
 
         <Row>
-          <Col xs={6} md={4}>
-            <Tile />
+          <Col md={12} style={{textAlign: "center"}}>
+          { typeof imageList.map === 'function' && imageList.map( (imageList) => {
+            
+              return <Tile 
+                key={imageList.id} 
+                url={imageList.img_src}
+                eDate={imageList.earth_date}
+                sol={imageList.sol}
+                camera={imageList.camera.full_name}
+                />;
+            })}
           </Col>
         </Row>
-
       </div>
     );
   }

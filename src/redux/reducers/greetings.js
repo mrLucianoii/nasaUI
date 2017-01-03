@@ -30,6 +30,7 @@ function curiosityStore (state = {}, action){
           result: [
             {
               imageList: action.result,
+              receivedAt: Date.now(),    
               completed: true
             },
             ...state.result

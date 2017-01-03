@@ -16,35 +16,40 @@ import {
 
 @connect((state) => state)
 export default class Tile extends React.Component {
-  static fetchData(store) {
-    return store.dispatch(actions.getNasaToday())  
-  }
   render() {
+		//console.log("Inside Tile: ", this.props)
+		let { camera, url, eDate, sol } = this.props
+
+		let moduleStyle = {
+ 				backgroundImage:'url('+ url +')', 
+    	  backgroundRepeat: 'no-repeat',
+      	backgroundSize: 'cover',
+      	backgroundPosition: 'center center',
+				height: '243px',
+			}
       return (
-        <PanelContainer>
-		<Panel>
-		  <PanelBody>
-			<Grid>
-			  <Row>
-				<Col xs={12}>
-				  <p>
-					<LoremIpsum query='5s' />
-				  </p>
-				</Col>
-			  </Row>
-			</Grid>
-		  </PanelBody>
-		  <PanelFooter className='bg-red'>
-			<Grid>
-			  <Row>
-				<Col xs={12} className='fg-white'>
-				  <h4>Panel Body + Footer without Panel Header</h4>
-				  <h6>Mini Heading</h6>
-				</Col>
-			  </Row>
-			</Grid>
-		  </PanelFooter>
-		</Panel>
+				<PanelContainer id="rover">
+					<Panel>
+						<PanelBody style={ moduleStyle }>
+						<Grid>
+							<Row>
+							<Col xs={12}>
+													
+							</Col>
+							</Row>
+						</Grid>
+						</PanelBody>
+						<PanelFooter className='bg-red'>
+						<Grid>
+							<Row>
+							<Col xs={12} className='fg-white'>
+								<h4>SOL: {sol} | Camera: {camera} </h4>
+								<h6>Earth Date: {eDate}</h6>
+							</Col>
+							</Row>
+						</Grid>
+						</PanelFooter>
+					</Panel>
 	  </PanelContainer>
       );
   }

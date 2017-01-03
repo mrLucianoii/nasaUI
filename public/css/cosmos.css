@@ -20,6 +20,15 @@ html.touchevents #body.phone {
 #sidebar.leave {
     top: 0;
 }
+#rover .rubix-panel-controls {
+    display: none;
+}
+#rover {
+    display: inline-block;
+    margin-top: 27px; 
+    margin-right: 17px;
+    width: 293px;
+}
 @media (max-width: 320px){
 
 }

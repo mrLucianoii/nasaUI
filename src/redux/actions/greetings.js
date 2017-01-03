@@ -32,9 +32,15 @@ function getNasaToday() {
   }
 }
 
-function getMarsImagesBySol(){
+function getMarsImagesBySol( solNumber ){
+  console.log( "Inside Mars Action, TypeOf: ", solNumber )
+  console.log( typeof solNumber == "undefined" )
+  let sol = ( typeof solNumber === "undefined" ) ? "900" : solNumber
+  let url = "https://gentle-crag-31085.herokuapp.com/marsDay/"+sol
+
+  console.log("Inside Action URL: ", url)
   return dispatch => {
-    return axios.get("https://gentle-crag-31085.herokuapp.com/marsDay/900")
+    return axios.get( url )
     .then((result) => {
       dispatch({type: GET_IMAGE_BY_SOL, result: result.data});
     }).catch((error) => {

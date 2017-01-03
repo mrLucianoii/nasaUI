@@ -19,15 +19,15 @@ export default class Curiosity extends React.Component {
   static fetchData(store) {   
     // getNasaToday Required Dispatch because TopBanner is top: -200px
      store.dispatch(actions.getNasaToday())
-    return store.dispatch(actions.getMarsImagesBySol())
+    return store.dispatch(actions.getMarsImagesBySol("1000"))
   
 }
   render() {
     let { curiosityStore , dispatch } = this.props
     let imageList = curiosityStore.result[0].imageList.photos
     
-    if ( imageList.length > 30 )
-      imageList = imageList.splice(0, 27)
+    if ( imageList.length > 53 )
+      imageList = imageList.splice(0, 53)
 
     // Future: Write an algorithm that splices large list and lazyloads
   

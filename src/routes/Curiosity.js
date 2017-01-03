@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Tile } from '../components'
+import Tile from '../components/Tile'
 
 import actions from '../redux/actions';
 
@@ -15,7 +15,7 @@ import {
 } from '@sketchpixy/rubix';
 
 @connect((state) => state)
-export default class Home extends React.Component {
+export default class Curiosity extends React.Component {
   static fetchData(store) {
     return store.dispatch(actions.getNasaToday())
   }
@@ -48,7 +48,13 @@ export default class Home extends React.Component {
         <Jumbotron style={jumboStyle} className="nasaJumbo" >
         <h1 style={h1Style}>Curiosity</h1>
         </Jumbotron>
-        <Tile />
+
+        <Row>
+          <Col xs={6} md={4}>
+            <Tile />
+          </Col>
+        </Row>
+
       </div>
     );
   }

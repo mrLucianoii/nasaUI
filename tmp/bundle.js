@@ -54,7 +54,7 @@ require('source-map-support').install({environment: 'node'});
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {'use strict';var _stringify=__webpack_require__(2);var _stringify2=_interopRequireDefault(_stringify);var _path=__webpack_require__(5);var _path2=_interopRequireDefault(_path);var _express=__webpack_require__(6);var _express2=_interopRequireDefault(_express);var _compression=__webpack_require__(7);var _compression2=_interopRequireDefault(_compression);var _cookieParser=__webpack_require__(8);var _cookieParser2=_interopRequireDefault(_cookieParser);var _expressGraphql=__webpack_require__(9);var _expressGraphql2=_interopRequireDefault(_expressGraphql);var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _server=__webpack_require__(11);var _server2=_interopRequireDefault(_server);var _routes=__webpack_require__(180);var _routes2=_interopRequireDefault(_routes);var _reduxRouter=__webpack_require__(603);var _RubixAssetMiddleware=__webpack_require__(624);var _RubixAssetMiddleware2=_interopRequireDefault(_RubixAssetMiddleware);var _schema=__webpack_require__(625);var _schema2=_interopRequireDefault(_schema);var _reducers=__webpack_require__(628);var _reducers2=_interopRequireDefault(_reducers);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}(0,_reduxRouter.setupReducers)(_reducers2.default);var port=process.env.PORT||8080;var app=(0,_express2.default)();app.use((0,_compression2.default)());app.use((0,_cookieParser2.default)());app.use(_express2.default.static(_path2.default.join(process.cwd(),'public')));app.use('/imgs',_express2.default.static(_path2.default.join(__dirname,'public/images')));app.use('/js',_express2.default.static(_path2.default.join(__dirname,'public/javascripts')));app.use('/css',_express2.default.static(_path2.default.join(__dirname,'public/stylesheets')));//app.use(express.static(__dirname + '/public'));
+	/* WEBPACK VAR INJECTION */(function(__dirname) {'use strict';var _stringify=__webpack_require__(2);var _stringify2=_interopRequireDefault(_stringify);var _path=__webpack_require__(5);var _path2=_interopRequireDefault(_path);var _express=__webpack_require__(6);var _express2=_interopRequireDefault(_express);var _compression=__webpack_require__(7);var _compression2=_interopRequireDefault(_compression);var _cookieParser=__webpack_require__(8);var _cookieParser2=_interopRequireDefault(_cookieParser);var _expressGraphql=__webpack_require__(9);var _expressGraphql2=_interopRequireDefault(_expressGraphql);var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _server=__webpack_require__(11);var _server2=_interopRequireDefault(_server);var _routes=__webpack_require__(180);var _routes2=_interopRequireDefault(_routes);var _reduxRouter=__webpack_require__(604);var _RubixAssetMiddleware=__webpack_require__(625);var _RubixAssetMiddleware2=_interopRequireDefault(_RubixAssetMiddleware);var _schema=__webpack_require__(626);var _schema2=_interopRequireDefault(_schema);var _reducers=__webpack_require__(629);var _reducers2=_interopRequireDefault(_reducers);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}(0,_reduxRouter.setupReducers)(_reducers2.default);var port=process.env.PORT||8080;var app=(0,_express2.default)();app.use((0,_compression2.default)());app.use((0,_cookieParser2.default)());app.use(_express2.default.static(_path2.default.join(process.cwd(),'public')));app.use('/imgs',_express2.default.static(_path2.default.join(__dirname,'public/images')));app.use('/js',_express2.default.static(_path2.default.join(__dirname,'public/javascripts')));app.use('/css',_express2.default.static(_path2.default.join(__dirname,'public/stylesheets')));//app.use(express.static(__dirname + '/public'));
 	//app.use("/bower_components", express.static(path.join(__dirname, 'bower_components')));
 	app.set('views',_path2.default.join(process.cwd(),'views'));app.set('view engine','pug');function renderHTML(req,res){(0,_reduxRouter.renderHTMLString)(_routes2.default,req,function(error,redirectLocation,data){if(error){if(error.message==='Not found'){res.status(404).send(error.message);}else{res.status(500).send(error.message);}}else if(redirectLocation){res.redirect(302,redirectLocation.pathname+redirectLocation.search);}else{res.render('index',{content:data.content,data:(0,_stringify2.default)(data.data).replace(/\//g,'\\/')});}});}app.use('/graphql',(0,_expressGraphql2.default)({schema:_schema2.default,pretty:true,graphiql:true}));app.get('*',(0,_RubixAssetMiddleware2.default)('ltr'),function(req,res,next){renderHTML(req,res);});app.listen(port,function(){console.log('Node.js app is running at http://localhost:'+port+'/');});;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(port,'port','/Users/SD_Dude/sites/rubix/redux/nasaUI/server.babel.js');__REACT_HOT_LOADER__.register(app,'app','/Users/SD_Dude/sites/rubix/redux/nasaUI/server.babel.js');__REACT_HOT_LOADER__.register(renderHTML,'renderHTML','/Users/SD_Dude/sites/rubix/redux/nasaUI/server.babel.js');}();;
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
@@ -48504,11 +48504,17 @@ require('source-map-support').install({environment: 'node'});
 /* 602 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule=true;exports.default=undefined;var _classCallCheck2=__webpack_require__(181);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(182);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(250);var _inherits3=_interopRequireDefault(_inherits2);var _dec,_class;var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _reactRedux=__webpack_require__(591);var _actions=__webpack_require__(592);var _actions2=_interopRequireDefault(_actions);var _rubix=__webpack_require__(260);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var Home=(_dec=(0,_reactRedux.connect)(function(state){return state;}),_dec(_class=function(_React$Component){(0,_inherits3.default)(Home,_React$Component);function Home(){(0,_classCallCheck3.default)(this,Home);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}Home.fetchData=function fetchData(store){return store.dispatch(_actions2.default.getNasaToday());};Home.prototype.render=function render(){var _props=this.props,nasaPortal=_props.nasaPortal,dispatch=_props.dispatch;var result=nasaPortal.result,error=nasaPortal.error;var apod=result[0].apod;var jumboStyle={position:"relative",width:'100%',top:"0",height:"333px",backgroundImage:'url(/imgs/app/curiosity/curiositypano.jpg)',backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'left center',overlow:'hidden',zIndex:'2',marginBottom:0};// console.log("Inside Curiosity: ", this.props)
-	return _react2.default.createElement(_rubix.Jumbotron,{style:jumboStyle,className:'nasaJumbo'},_react2.default.createElement('h1',{style:{position:"absolute",color:'#ffffff',paddingLeft:34,bottom:0}},'Curiosity'));};return Home;}(_react2.default.Component))||_class);exports.default=Home;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(Home,'Home','/Users/SD_Dude/sites/rubix/redux/nasaUI/src/routes/Curiosity.js');}();;
+	'use strict';exports.__esModule=true;exports.default=undefined;var _classCallCheck2=__webpack_require__(181);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(182);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(250);var _inherits3=_interopRequireDefault(_inherits2);var _dec,_class;var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _reactRedux=__webpack_require__(591);var _Tile=__webpack_require__(603);var _Tile2=_interopRequireDefault(_Tile);var _actions=__webpack_require__(592);var _actions2=_interopRequireDefault(_actions);var _rubix=__webpack_require__(260);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var Curiosity=(_dec=(0,_reactRedux.connect)(function(state){return state;}),_dec(_class=function(_React$Component){(0,_inherits3.default)(Curiosity,_React$Component);function Curiosity(){(0,_classCallCheck3.default)(this,Curiosity);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}Curiosity.fetchData=function fetchData(store){return store.dispatch(_actions2.default.getNasaToday());};Curiosity.prototype.render=function render(){var _props=this.props,nasaPortal=_props.nasaPortal,dispatch=_props.dispatch;var result=nasaPortal.result,error=nasaPortal.error;var apod=result[0].apod;var jumboStyle={position:"relative",width:'100%',top:"0",height:"333px",backgroundImage:'url(/imgs/app/curiosity/curiositypano.jpg)',backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'left center',overlow:'hidden',zIndex:'2',marginBottom:0};var h1Style={position:"absolute",color:'#ffffff',paddingLeft:34,bottom:0};// console.log("Inside Curiosity: ", this.props)
+	return _react2.default.createElement('div',null,_react2.default.createElement(_rubix.Jumbotron,{style:jumboStyle,className:'nasaJumbo'},_react2.default.createElement('h1',{style:h1Style},'Curiosity')),_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:6,md:4},_react2.default.createElement(_Tile2.default,null))));};return Curiosity;}(_react2.default.Component))||_class);exports.default=Curiosity;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(Curiosity,'Curiosity','/Users/SD_Dude/sites/rubix/redux/nasaUI/src/routes/Curiosity.js');}();;
 
 /***/ },
 /* 603 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';exports.__esModule=true;exports.default=undefined;var _classCallCheck2=__webpack_require__(181);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(182);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(250);var _inherits3=_interopRequireDefault(_inherits2);var _dec,_class;var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _reactRedux=__webpack_require__(591);var _actions=__webpack_require__(592);var _actions2=_interopRequireDefault(_actions);var _rubix=__webpack_require__(260);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var Tile=(_dec=(0,_reactRedux.connect)(function(state){return state;}),_dec(_class=function(_React$Component){(0,_inherits3.default)(Tile,_React$Component);function Tile(){(0,_classCallCheck3.default)(this,Tile);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}Tile.fetchData=function fetchData(store){return store.dispatch(_actions2.default.getNasaToday());};Tile.prototype.render=function render(){return _react2.default.createElement(_rubix.PanelContainer,null,_react2.default.createElement(_rubix.Panel,null,_react2.default.createElement(_rubix.PanelBody,null,_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement('p',null,_react2.default.createElement(_rubix.LoremIpsum,{query:'5s'})))))),_react2.default.createElement(_rubix.PanelFooter,{className:'bg-red'},_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12,className:'fg-white'},_react2.default.createElement('h4',null,'Panel Body + Footer without Panel Header'),_react2.default.createElement('h6',null,'Mini Heading')))))));};return Tile;}(_react2.default.Component))||_class);exports.default=Tile;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(Tile,'Tile','/Users/SD_Dude/sites/rubix/redux/nasaUI/src/components/Tile.js');}();;
+
+/***/ },
+/* 604 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48566,35 +48572,35 @@ require('source-map-support').install({environment: 'node'});
 	
 	var _reactRouter = __webpack_require__(259);
 	
-	var _reactHotLoader = __webpack_require__(604);
+	var _reactHotLoader = __webpack_require__(605);
 	
-	var _reactRouterScroll = __webpack_require__(605);
+	var _reactRouterScroll = __webpack_require__(606);
 	
 	var _reactRouterScroll2 = _interopRequireDefault(_reactRouterScroll);
 	
 	var _reactRedux = __webpack_require__(591);
 	
-	var _redux = __webpack_require__(611);
+	var _redux = __webpack_require__(612);
 	
-	var _reactRouterRedux = __webpack_require__(612);
+	var _reactRouterRedux = __webpack_require__(613);
 	
-	var _reduxThunk = __webpack_require__(613);
+	var _reduxThunk = __webpack_require__(614);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
-	var _reduxFetchData = __webpack_require__(614);
+	var _reduxFetchData = __webpack_require__(615);
 	
-	var _utils = __webpack_require__(615);
+	var _utils = __webpack_require__(616);
 	
-	var _onRouterSetup = __webpack_require__(619);
+	var _onRouterSetup = __webpack_require__(620);
 	
 	var _onRouterSetup2 = _interopRequireDefault(_onRouterSetup);
 	
-	var _onRouterUpdate = __webpack_require__(621);
+	var _onRouterUpdate = __webpack_require__(622);
 	
 	var _onRouterUpdate2 = _interopRequireDefault(_onRouterUpdate);
 	
-	var _checkScroll = __webpack_require__(622);
+	var _checkScroll = __webpack_require__(623);
 	
 	var _checkScroll2 = _interopRequireDefault(_checkScroll);
 	
@@ -48766,13 +48772,13 @@ require('source-map-support').install({environment: 'node'});
 	}
 
 /***/ },
-/* 604 */
+/* 605 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-hot-loader");
 
 /***/ },
-/* 605 */
+/* 606 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48784,7 +48790,7 @@ require('source-map-support').install({environment: 'node'});
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _ScrollBehaviorContainer = __webpack_require__(606);
+	var _ScrollBehaviorContainer = __webpack_require__(607);
 	
 	var _ScrollBehaviorContainer2 = _interopRequireDefault(_ScrollBehaviorContainer);
 	
@@ -48807,7 +48813,7 @@ require('source-map-support').install({environment: 'node'});
 	module.exports = exports['default'];
 
 /***/ },
-/* 606 */
+/* 607 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48818,7 +48824,7 @@ require('source-map-support').install({environment: 'node'});
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _ScrollBehavior = __webpack_require__(607);
+	var _ScrollBehavior = __webpack_require__(608);
 	
 	var _ScrollBehavior2 = _interopRequireDefault(_ScrollBehavior);
 	
@@ -48899,7 +48905,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ },
-/* 607 */
+/* 608 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48922,13 +48928,13 @@ require('source-map-support').install({environment: 'node'});
 	
 	var _scrollTop2 = _interopRequireDefault(_scrollTop);
 	
-	var _requestAnimationFrame = __webpack_require__(608);
+	var _requestAnimationFrame = __webpack_require__(609);
 	
 	var _requestAnimationFrame2 = _interopRequireDefault(_requestAnimationFrame);
 	
-	var _Actions = __webpack_require__(609);
+	var _Actions = __webpack_require__(610);
 	
-	var _DOMStateStorage = __webpack_require__(610);
+	var _DOMStateStorage = __webpack_require__(611);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -49106,7 +49112,7 @@ require('source-map-support').install({environment: 'node'});
 	module.exports = exports['default'];
 
 /***/ },
-/* 608 */
+/* 609 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49157,7 +49163,7 @@ require('source-map-support').install({environment: 'node'});
 	module.exports = compatRaf;
 
 /***/ },
-/* 609 */
+/* 610 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -49184,7 +49190,7 @@ require('source-map-support').install({environment: 'node'});
 	var POP = exports.POP = 'POP';
 
 /***/ },
-/* 610 */
+/* 611 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49274,25 +49280,25 @@ require('source-map-support').install({environment: 'node'});
 	};
 
 /***/ },
-/* 611 */
+/* 612 */
 /***/ function(module, exports) {
 
 	module.exports = require("redux");
 
 /***/ },
-/* 612 */
+/* 613 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-router-redux");
 
 /***/ },
-/* 613 */
+/* 614 */
 /***/ function(module, exports) {
 
 	module.exports = require("redux-thunk");
 
 /***/ },
-/* 614 */
+/* 615 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49301,7 +49307,7 @@ require('source-map-support').install({environment: 'node'});
 	  value: true
 	});
 	
-	var _utils = __webpack_require__(615);
+	var _utils = __webpack_require__(616);
 	
 	Object.defineProperty(exports, 'fetchDataOnServer', {
 	  enumerable: true,
@@ -49310,7 +49316,7 @@ require('source-map-support').install({environment: 'node'});
 	  }
 	});
 	
-	var _module = __webpack_require__(616);
+	var _module = __webpack_require__(617);
 	
 	Object.defineProperty(exports, 'reducer', {
 	  enumerable: true,
@@ -49319,7 +49325,7 @@ require('source-map-support').install({environment: 'node'});
 	  }
 	});
 	
-	var _fetchData = __webpack_require__(618);
+	var _fetchData = __webpack_require__(619);
 	
 	Object.defineProperty(exports, 'FetchData', {
 	  enumerable: true,
@@ -49331,7 +49337,7 @@ require('source-map-support').install({environment: 'node'});
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 615 */
+/* 616 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49348,7 +49354,7 @@ require('source-map-support').install({environment: 'node'});
 	exports.flattenComponents = flattenComponents;
 	exports.fetchDataOnServer = fetchDataOnServer;
 	
-	var _module = __webpack_require__(616);
+	var _module = __webpack_require__(617);
 	
 	/**
 	 *
@@ -49428,7 +49434,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ },
-/* 616 */
+/* 617 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49442,7 +49448,7 @@ require('source-map-support').install({environment: 'node'});
 	
 	exports.handleDoneFetching = handleDoneFetching;
 	
-	var _reduxActions = __webpack_require__(617);
+	var _reduxActions = __webpack_require__(618);
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
@@ -49459,13 +49465,13 @@ require('source-map-support').install({environment: 'node'});
 	exports.default = reducer;
 
 /***/ },
-/* 617 */
+/* 618 */
 /***/ function(module, exports) {
 
 	module.exports = require("redux-actions");
 
 /***/ },
-/* 618 */
+/* 619 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49481,15 +49487,15 @@ require('source-map-support').install({environment: 'node'});
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _redux = __webpack_require__(611);
+	var _redux = __webpack_require__(612);
 	
 	var _reactRedux = __webpack_require__(591);
 	
 	var _reactRouter = __webpack_require__(259);
 	
-	var _module = __webpack_require__(616);
+	var _module = __webpack_require__(617);
 	
-	var _utils = __webpack_require__(615);
+	var _utils = __webpack_require__(616);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -49569,7 +49575,7 @@ require('source-map-support').install({environment: 'node'});
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(FetchData);
 
 /***/ },
-/* 619 */
+/* 620 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49583,7 +49589,7 @@ require('source-map-support').install({environment: 'node'});
 	
 	var _isBrowser2 = _interopRequireDefault(_isBrowser);
 	
-	__webpack_require__(620);
+	__webpack_require__(621);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -49648,7 +49654,7 @@ require('source-map-support').install({environment: 'node'});
 	}
 
 /***/ },
-/* 620 */
+/* 621 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49875,7 +49881,7 @@ require('source-map-support').install({environment: 'node'});
 	}
 
 /***/ },
-/* 621 */
+/* 622 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49921,7 +49927,7 @@ require('source-map-support').install({environment: 'node'});
 	}
 
 /***/ },
-/* 622 */
+/* 623 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49935,11 +49941,11 @@ require('source-map-support').install({environment: 'node'});
 	
 	var _isBrowser2 = _interopRequireDefault(_isBrowser);
 	
-	var _onRouterUpdate = __webpack_require__(621);
+	var _onRouterUpdate = __webpack_require__(622);
 	
 	var _onRouterUpdate2 = _interopRequireDefault(_onRouterUpdate);
 	
-	var _ga = __webpack_require__(623);
+	var _ga = __webpack_require__(624);
 	
 	var _ga2 = _interopRequireDefault(_ga);
 	
@@ -49967,7 +49973,7 @@ require('source-map-support').install({environment: 'node'});
 	}
 
 /***/ },
-/* 623 */
+/* 624 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49994,7 +50000,7 @@ require('source-map-support').install({environment: 'node'});
 	};
 
 /***/ },
-/* 624 */
+/* 625 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50044,31 +50050,31 @@ require('source-map-support').install({environment: 'node'});
 	var static_path = 'http://' + hostname + ':' + port;
 
 /***/ },
-/* 625 */
+/* 626 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule=true;var _ref3;var _graphql=__webpack_require__(626);var _graphqlRelay=__webpack_require__(627);var greetingsType=new _graphql.GraphQLObjectType({name:'Greetings',fields:function fields(){return{hello:{type:_graphql.GraphQLString,args:{message:{type:_graphql.GraphQLString}},resolve:function resolve(parentValue,_ref){var message=_ref.message;return'received: '+message;}}};}});var nasaData=new _graphql.GraphQLObjectType({name:'Nasa',fields:function fields(){return{nasa:{type:_graphql.GraphQLString,args:{message:{type:_graphql.GraphQLString}},resolve:function resolve(parentValue,_ref2){var message=_ref2.message;return'received: '+message;}}};}});var queryNasa=new _graphql.GraphQLObjectType({name:'Query',fields:function fields(){return{nasaPic:{type:nasaData,resolve:function resolve(){return"";}}};}});var queryType=new _graphql.GraphQLObjectType({name:'Query',fields:function fields(){return{greetings:{type:greetingsType,resolve:function resolve(){return"";}}};}});var _default=new _graphql.GraphQLSchema((_ref3={query:queryType},_ref3['query']=queryNasa,_ref3));exports.default=_default;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(greetingsType,'greetingsType','/Users/SD_Dude/sites/rubix/redux/nasaUI/data/schema.js');__REACT_HOT_LOADER__.register(nasaData,'nasaData','/Users/SD_Dude/sites/rubix/redux/nasaUI/data/schema.js');__REACT_HOT_LOADER__.register(queryNasa,'queryNasa','/Users/SD_Dude/sites/rubix/redux/nasaUI/data/schema.js');__REACT_HOT_LOADER__.register(queryType,'queryType','/Users/SD_Dude/sites/rubix/redux/nasaUI/data/schema.js');__REACT_HOT_LOADER__.register(_default,'default','/Users/SD_Dude/sites/rubix/redux/nasaUI/data/schema.js');}();;
-
-/***/ },
-/* 626 */
-/***/ function(module, exports) {
-
-	module.exports = require("graphql");
+	'use strict';exports.__esModule=true;var _ref3;var _graphql=__webpack_require__(627);var _graphqlRelay=__webpack_require__(628);var greetingsType=new _graphql.GraphQLObjectType({name:'Greetings',fields:function fields(){return{hello:{type:_graphql.GraphQLString,args:{message:{type:_graphql.GraphQLString}},resolve:function resolve(parentValue,_ref){var message=_ref.message;return'received: '+message;}}};}});var nasaData=new _graphql.GraphQLObjectType({name:'Nasa',fields:function fields(){return{nasa:{type:_graphql.GraphQLString,args:{message:{type:_graphql.GraphQLString}},resolve:function resolve(parentValue,_ref2){var message=_ref2.message;return'received: '+message;}}};}});var queryNasa=new _graphql.GraphQLObjectType({name:'Query',fields:function fields(){return{nasaPic:{type:nasaData,resolve:function resolve(){return"";}}};}});var queryType=new _graphql.GraphQLObjectType({name:'Query',fields:function fields(){return{greetings:{type:greetingsType,resolve:function resolve(){return"";}}};}});var _default=new _graphql.GraphQLSchema((_ref3={query:queryType},_ref3['query']=queryNasa,_ref3));exports.default=_default;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(greetingsType,'greetingsType','/Users/SD_Dude/sites/rubix/redux/nasaUI/data/schema.js');__REACT_HOT_LOADER__.register(nasaData,'nasaData','/Users/SD_Dude/sites/rubix/redux/nasaUI/data/schema.js');__REACT_HOT_LOADER__.register(queryNasa,'queryNasa','/Users/SD_Dude/sites/rubix/redux/nasaUI/data/schema.js');__REACT_HOT_LOADER__.register(queryType,'queryType','/Users/SD_Dude/sites/rubix/redux/nasaUI/data/schema.js');__REACT_HOT_LOADER__.register(_default,'default','/Users/SD_Dude/sites/rubix/redux/nasaUI/data/schema.js');}();;
 
 /***/ },
 /* 627 */
 /***/ function(module, exports) {
 
-	module.exports = require("graphql-relay");
+	module.exports = require("graphql");
 
 /***/ },
 /* 628 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	'use strict';var _extends2=__webpack_require__(262);var _extends3=_interopRequireDefault(_extends2);var _greetings=__webpack_require__(629);var _greetings2=_interopRequireDefault(_greetings);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}module.exports=(0,_extends3.default)({},_greetings2.default);;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}}();;
+	module.exports = require("graphql-relay");
 
 /***/ },
 /* 629 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';var _extends2=__webpack_require__(262);var _extends3=_interopRequireDefault(_extends2);var _greetings=__webpack_require__(630);var _greetings2=_interopRequireDefault(_greetings);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}module.exports=(0,_extends3.default)({},_greetings2.default);;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}}();;
+
+/***/ },
+/* 630 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var _assign=__webpack_require__(263);var _assign2=_interopRequireDefault(_assign);var _actionTypes=__webpack_require__(594);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function nasaPortal(){var state=arguments.length>0&&arguments[0]!==undefined?arguments[0]:[];var action=arguments[1];switch(action.type){case _actionTypes.GET_GREETING:return action.result.data.greetings;case _actionTypes.GET_NASAPIC://console.log(action);

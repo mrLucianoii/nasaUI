@@ -14,8 +14,8 @@ html.solid body #rubix-nav-header {
 html.touchevents #body > div {
     position: relative;
 }
-html.touchevents #body {
-    padding-top: 199px !important;
+html.touchevents #body.phone {
+   padding-top: 241px !important;
 }
 #sidebar.leave {
     top: 0;

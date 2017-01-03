@@ -19,16 +19,15 @@ export default class TopBanner extends React.Component {
     return store.dispatch(actions.getNasaToday())  
   }
   render() {
-    let { nasaPortal, dispatch } = this.props
+    let { nasaPortal, dispatch, routing } = this.props
 	  let { result, error } = nasaPortal
     let { apod } = result[0]
-    console.log("TopBanner Result Obj: ", result )
+    let $top = routing.locationBeforeTransitions.pathname === "/curiosity" ? "-222px" : "0px"
 
-    return (
-    <Jumbotron style={{
+   let jumboStyle = {
       position: "fixed",
       width: '100%',
-      top: 0, 
+      top: $top, 
       height: "222px", 
       backgroundImage:'url(' + apod.url + ')', 
       backgroundRepeat: 'no-repeat',
@@ -37,7 +36,9 @@ export default class TopBanner extends React.Component {
       overlow: 'hidden',
       zIndex: '2',
       marginBottom: 0
-  }} className="nasaJumbo" >
+   }
+    return (
+    <Jumbotron style={jumboStyle} className="nasaJumbo" >
       <h1 style={{
         color: '#ffffff',
         paddingLeft: 34,

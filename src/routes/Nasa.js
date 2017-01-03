@@ -41,6 +41,7 @@ export default class Nasa extends React.Component {
     let { nasaPortal, dispatch } = this.props;
 	  let { result, error } = nasaPortal
     let { apod } = result[0]
+//    console.log("Inside Nasa: ", this.props)
 
     let imageStyle = {
       width: "100%",

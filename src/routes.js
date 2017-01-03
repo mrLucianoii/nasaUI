@@ -15,24 +15,30 @@ import Footer from './common/footer'
 import Nasa from './routes/Nasa'
 import Curiosity from './routes/Curiosity'
 
+//@withRouter
 class App extends React.Component {
   render() {
+    let { location } = this.props
+    let $height2 = location.pathname === "/curiosity" ? "50px" : "241px"
+    let $phone = location.pathname === "/curiosity" ? " " : "phone"
+
+    let bodyStyle = {
+        overflowY: 'auto',
+        top: '0',
+        marginTop: '52px',
+        paddingTop: $height2,
+        zIndex: '1'
+    }
     return (
       <MainContainer {...this.props}>
           <TopBanner />
-          <Sidebar />
+          <Sidebar className="leave" />
           <Header/>
-          <div id='body' style={{
-            overflowY: 'auto',
-            top: '0',
-            marginTop: '52px',
-            paddingTop: '241px !Important',
-            zIndex: '1'
-          }}>
+          <div id='body' style={bodyStyle} className={$phone} >
             <Grid>
               <Row>
                 <Col xs={12}>
-
+                  { console.log(this.props) }
                   {this.props.children}
                 </Col>
             </Row>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 import {
   Sidebar, SidebarNav, SidebarNavItem,
@@ -6,16 +6,15 @@ import {
   LoremIpsum, Grid, Row, Col, FormControl,
   Label, Progress, Icon,
   SidebarDivider
-} from '@sketchpixy/rubix';
+} from '@sketchpixy/rubix'
 
-import { Link, withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router'
 
 @withRouter
 class ApplicationSidebar extends React.Component {
   handleChange(e) {
     this._nav.search(e.target.value);
   }
-
   render() {
     return (
       <div >
@@ -59,8 +58,10 @@ class DummySidebar extends React.Component {
 @withRouter
 export default class SidebarContainer extends React.Component {
   render() {
+    let $height = location.pathname === "/curiosity" ? "0" : "200px"
+
     let sidebar = {
-      top: '200px',
+      top: $height,
       zIndex: '3'
     }
     return (

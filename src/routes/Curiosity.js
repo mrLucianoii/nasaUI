@@ -18,6 +18,11 @@ export default class Home extends React.Component {
     return store.dispatch(actions.getNasaToday())
   }
   render() {
+    let { nasaPortal, dispatch } = this.props;
+	  let { result, error } = nasaPortal
+    let { apod } = result[0]
+
+   // console.log("Inside Curiosity: ", this.props)
     return (
       <PanelContainer>
         <Panel>

@@ -58,17 +58,22 @@ class HeaderNavigation extends React.Component {
   }
 }
 
+@withRouter
 export default class Header extends React.Component {
   render() {
     let navStyle = {
       paddingLeft: 0,
       paddingRight: 0
     }
+    let { location } = this.props 
+    let $height = location.pathname === "/curiosity" ? "0" : "200px"
+
     return (
-      <Grid id='navbar' {...this.props} style={ navStyle } >
+
+      <Grid id='navbar' style={ navStyle } >
         <Row>
           <Col xs={12}>
-            <Navbar fixedTop id='rubix-nav-header' style={{top: '200px'}}>
+            <Navbar fixedTop id='rubix-nav-header' style={{top: $height}}>
               <Row>
                 <Col xs={3} visible='xs'>
                   <SidebarBtn />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Tile } from '../components'
 
 import actions from '../redux/actions';
 
@@ -35,16 +36,20 @@ export default class Home extends React.Component {
       zIndex: '2',
       marginBottom: 0
    }
+   let h1Style = {
+      position: "absolute",
+      color: '#ffffff',
+      paddingLeft: 34,
+      bottom: 0
+   }
    // console.log("Inside Curiosity: ", this.props)
     return (
-      <Jumbotron style={jumboStyle} className="nasaJumbo" >
-      <h1 style={{
-        position: "absolute",
-        color: '#ffffff',
-        paddingLeft: 34,
-        bottom: 0,
-      }}>Curiosity</h1>
-     </Jumbotron>
+      <div>
+        <Jumbotron style={jumboStyle} className="nasaJumbo" >
+        <h1 style={h1Style}>Curiosity</h1>
+        </Jumbotron>
+        <Tile />
+      </div>
     );
   }
 }

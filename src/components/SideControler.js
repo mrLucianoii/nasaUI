@@ -21,18 +21,18 @@ export default class SideControler extends React.Component {
 
        // let { curiosityStore, dispatch } = this.props
 
-        store.dispatch(action.getMarsImagesBySol("67"))
+      //  store.dispatch(action.getMarsImagesBySol("67"))
     } 
     render(){
 
         return (
             <Form>
                 <FormGroup controlId="formControlsText">
-	                <ControlLabel>Enter A Sol</ControlLabel>
+                    <ControlLabel>Enter a Sol (feature comming soon)</ControlLabel>
 	                 <FormControl 
                      type="text" 
                      value={this.state.value}
-                     onChange={::this.handleChange}
+                     //onChange={::this.handleChange}
                      />
 	            </FormGroup>
             </Form>

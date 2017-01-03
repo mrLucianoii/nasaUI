@@ -10,6 +10,7 @@ import {
   Panel,
   PanelBody,
   PanelContainer,
+  Jumbotron
 } from '@sketchpixy/rubix';
 
 @connect((state) => state)
@@ -21,23 +22,29 @@ export default class Home extends React.Component {
     let { nasaPortal, dispatch } = this.props;
 	  let { result, error } = nasaPortal
     let { apod } = result[0]
-
+    let jumboStyle = {
+      position: "relative",
+      width: '100%',
+      top: "0", 
+      height: "333px", 
+      backgroundImage:'url(/imgs/app/curiosity/curiositypano.jpg)', 
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      backgroundPosition: 'left center',
+      overlow: 'hidden',
+      zIndex: '2',
+      marginBottom: 0
+   }
    // console.log("Inside Curiosity: ", this.props)
     return (
-      <PanelContainer>
-        <Panel>
-          <PanelBody>
-            <Grid>
-              <Row>
-                <Col xs={12}>
-                  <h1></h1>
-                  <p>Hi</p>
-                </Col>
-              </Row>
-            </Grid>
-          </PanelBody>
-        </Panel>
-      </PanelContainer>
+      <Jumbotron style={jumboStyle} className="nasaJumbo" >
+      <h1 style={{
+        position: "absolute",
+        color: '#ffffff',
+        paddingLeft: 34,
+        bottom: 0,
+      }}>Curiosity</h1>
+     </Jumbotron>
     );
   }
 }

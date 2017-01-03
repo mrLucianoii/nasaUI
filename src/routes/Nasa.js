@@ -21,6 +21,7 @@ import {
 @connect((state) => state)
 export default class Nasa extends React.Component {
   static fetchData(store) {
+    store.dispatch(actions.getMarsImagesBySol("1000"))
      return store.dispatch(actions.getNasaToday())  
   }
   constructor(props) {

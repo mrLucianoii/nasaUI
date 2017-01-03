@@ -2,8 +2,7 @@ import {
   GET_GREETING,
   GET_NASAPIC,
   IS_TODAY,
-  SET_MARS,
-  SET_MARS_TEST
+  GET_IMAGE_BY_SOL
 } from './actionTypes';
 
 import axios from 'axios';
@@ -30,33 +29,21 @@ function getNasaToday() {
         error,
       });
     });
-  };
+  }
 }
 
-function isMars(){
-    // GET MARS DATA marsData.json = "Mars Data HI"    
-    let marsData = {
-        json: undefined,
-        receivedAt: Date.now()    
-    }
-    if (typeof marsData === undefined){
-      axios.get("https://gentle-crag-31085.herokuapp.com/isMars")
-      .then((result) => {
-        marsData.json = result
-      })
-      .catch((error) => {
-        marsData.json = error
-      })
-  }  
-    return { type: SET_MARS, marsData }  
+function getMarsImagesBySol(){
+  return dispatch => {
+    return axios.get("https://gentle-crag-31085.herokuapp.com/marsDay/900")
+    .then((result) => {
+      dispatch({type: GET_IMAGE_BY_SOL, result: result.data});
+    }).catch((error) => {
+      dispatch({type: GET_IMAGE_BY_SOL, error });
+    });
+  }
 }
-function getMarsTest(textInput){
-  if (textInput === undefined)
-    textInput = "default Blab"
-  return { type: SET_MARS_TEST, text: textInput }
-}
+
 module.exports = {
   getNasaToday,
-  isMars,
-  getMarsTest
+  getMarsImagesBySol
 };

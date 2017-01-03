@@ -38,7 +38,6 @@ class App extends React.Component {
             <Grid>
               <Row>
                 <Col xs={12}>
-                  { console.log(this.props) }
                   {this.props.children}
                 </Col>
             </Row>

@@ -1,8 +1,7 @@
 import {
   GET_GREETING,
   GET_NASAPIC,
-  SET_MARS,
-  SET_MARS_TEST
+  GET_IMAGE_BY_SOL
 } from '../actions/actionTypes';
 
 function nasaPortal(state = [], action) {
@@ -10,34 +9,38 @@ function nasaPortal(state = [], action) {
     case GET_GREETING:
       return action.result.data.greetings;
     case GET_NASAPIC:
-      //console.log(action);
-      //let test = Object.assign({}, state.result, action.result);
       return {
         result: [
-           {
+          {
             type: action.type,
-            apod: action.result
-          }
-         // ...state.result,
+            apod: action.result,
+            completed: true
+          },
+         ...state.result,
         ]
       };
-    case SET_MARS:
-        return {
-              image: action.marsData.json,
-              completed: true
-          } ;
-    case SET_MARS_TEST: 
-      return Object.assign({}, state, action);
     default:
       return state;
   }
 }
-function nasaApp (state = {}, action){
-  return {
-    nas
+function curiosityStore (state = {}, action){
+  switch (action.type) {
+    case GET_IMAGE_BY_SOL:
+       return {
+          result: [
+            {
+              imageList: action.result,
+              completed: true
+            },
+            ...state.result
+          ]         
+          }
+    default:
+      return state;
   }
 }
 
 module.exports = {
   nasaPortal,
+  curiosityStore
 };

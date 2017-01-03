@@ -20,7 +20,9 @@ import {
 
 @connect((state) => state)
 export default class Nasa extends React.Component {
-  
+  static fetchData(store) {
+     return store.dispatch(actions.getNasaToday())  
+  }
   constructor(props) {
 	  super(props);
 	  this.state = { showModal: false };
@@ -34,14 +36,11 @@ export default class Nasa extends React.Component {
   open() {
 	  this.setState({ showModal: true });
   }
-  static fetchData(store) {
-    return store.dispatch(actions.getNasaToday())
-  }
+
   render() {
     let { nasaPortal, dispatch } = this.props;
 	  let { result, error } = nasaPortal
     let { apod } = result[0]
-//    console.log("Inside Nasa: ", this.props)
 
     let imageStyle = {
       width: "100%",

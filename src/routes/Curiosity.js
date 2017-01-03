@@ -16,13 +16,16 @@ import {
 
 @connect((state) => state)
 export default class Curiosity extends React.Component {
-  static fetchData(store) {
-    return store.dispatch(actions.getNasaToday())
-  }
+  static fetchData(store) {   
+    // Required Dispatch because TopBanner is top: -200px
+     store.dispatch(actions.getNasaToday())
+    return store.dispatch(actions.getMarsImagesBySol())
+  
+}
   render() {
-    let { nasaPortal, dispatch } = this.props;
-	  let { result, error } = nasaPortal
-    let { apod } = result[0]
+    let { curiosityStore , dispatch } = this.props
+   // curiosityStore.dispatch(actions.getMarsImagesBySol())
+    console.log("Inside Curiosity obj.props: ", this.props)
     let jumboStyle = {
       position: "relative",
       width: '100%',
@@ -42,7 +45,6 @@ export default class Curiosity extends React.Component {
       paddingLeft: 34,
       bottom: 0
    }
-   // console.log("Inside Curiosity: ", this.props)
     return (
       <div>
         <Jumbotron style={jumboStyle} className="nasaJumbo" >

@@ -30,7 +30,7 @@ export default class Curiosity extends React.Component {
       imageList = imageList.splice(0, 53)
 
     // Future: Write an algorithm that splices large list and lazyloads
-  
+
     let jumboStyle = {
       position: "relative",
       width: '100%',

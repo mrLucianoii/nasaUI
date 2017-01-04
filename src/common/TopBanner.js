@@ -14,6 +14,11 @@ import {
 
 @connect((state) => state)
 export default class TopBanner extends React.Component {
+  static fetchData(store) {
+    store.dispatch(actions.getNasaToday())
+    return store.dispatch(actions.getMarsImagesBySol("1000"))
+    
+  }
   render() {
     let { nasaPortal, dispatch, routing } = this.props
 	  let { result, error } = nasaPortal

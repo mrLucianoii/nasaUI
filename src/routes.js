@@ -15,7 +15,6 @@ import Footer from './common/footer'
 import Nasa from './routes/Nasa'
 import Curiosity from './routes/Curiosity'
 
-//@withRouter
 class App extends React.Component {
   render() {
     let { location } = this.props    
@@ -29,6 +28,7 @@ class App extends React.Component {
         paddingTop: $height2,
         zIndex: '1'
     }
+    console.log("Routes Props", this.props)
     return (
       <MainContainer {...this.props}>
           <TopBanner />

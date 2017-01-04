@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import actions from '../redux/actions';
-
+import isMobileCheckPropValue from '../helpers/function'
 import {
   Row,
   Col,
@@ -18,8 +18,8 @@ export default class TopBanner extends React.Component {
     let { nasaPortal, dispatch, routing } = this.props
 	  let { result, error } = nasaPortal
     let { apod } = result[0]
-    let $top = routing.locationBeforeTransitions.pathname === "/curiosity" ? "-222px" : "0px"
-
+    let $top = isMobileCheckPropValue('solid history touchevents', routing)
+    
    let jumboStyle = {
       position: "fixed",
       width: '100%',

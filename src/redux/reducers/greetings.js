@@ -6,7 +6,6 @@ import {
 import actions from "../actions"
 
 function nasaPortal(state = [], action) {
-  console.log("NP fired")
   switch(action.type) {
     case GET_GREETING:
       return action.result.data.greetings;
@@ -26,8 +25,7 @@ function nasaPortal(state = [], action) {
   }
 }
 function curiosityStore (state = [], action){
-  console.log("CS fired")
-
+ 
   switch (action.type) {
     case GET_IMAGE_BY_SOL:
        return {

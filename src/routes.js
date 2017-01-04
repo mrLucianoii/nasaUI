@@ -28,7 +28,7 @@ class App extends React.Component {
         paddingTop: $height2,
         zIndex: '1'
     }
-    console.log("Routes Props", this.props)
+  //  console.log("Routes Props", this.props)
     return (
       <MainContainer {...this.props}>
           <TopBanner />

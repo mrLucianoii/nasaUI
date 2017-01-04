@@ -10,7 +10,6 @@ import {
 import SideControler from '../components/SideControler'
 
 import { Link, withRouter } from 'react-router'
-import isMobileCheckPropValue from '../helpers/function'
 
 @withRouter
 class ApplicationSidebar extends React.Component {
@@ -62,12 +61,10 @@ class DummySidebar extends React.Component {
 @withRouter
 export default class SidebarContainer extends React.Component {
   render() {
-    console.log("Sidebars this.props: ", this.props )
-    let { router } = this.props
-    let $top = isMobileCheckPropValue('solid history touchevents', routing)
+    let $height = location.pathname === "/curiosity" ? "0" : "200px"
 
     let sidebar = {
-      top: $top,
+      top: $height,
       zIndex: '3'
     }
     return (

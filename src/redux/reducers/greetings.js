@@ -23,7 +23,8 @@ function nasaPortal(state = [], action) {
       return state;
   }
 }
-function curiosityStore (state = {}, action){
+function curiosityStore (state = [], action){
+
   switch (action.type) {
     case GET_IMAGE_BY_SOL:
        return {

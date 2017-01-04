@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
-import isMobileCheckPropValue from '../helpers/function'
 
 import { Link, withRouter } from 'react-router';
 
@@ -66,15 +65,15 @@ export default class Header extends React.Component {
       paddingLeft: 0,
       paddingRight: 0
     }
-    let { location, router } = this.props 
-    let $top = isMobileCheckPropValue('solid history touchevents', routing)
+    let { location } = this.props 
+    let $height = location.pathname === "/curiosity" ? "0" : "200px"
 
     return (
 
       <Grid id='navbar' style={ navStyle } >
         <Row>
           <Col xs={12}>
-            <Navbar fixedTop id='rubix-nav-header' style={{top: $top}}>
+            <Navbar fixedTop id='rubix-nav-header' style={{top: $height}}>
               <Row>
                 <Col xs={3} visible='xs'>
                   <SidebarBtn />

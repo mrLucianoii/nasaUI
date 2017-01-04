@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import { IndexRoute, Route } from 'react-router'
-
+import isMobileCheckPropValue from './helpers/function'
 import { Grid, Row, Col, MainContainer } from '@sketchpixy/rubix'
 
 /* Common Components */
@@ -18,7 +18,7 @@ import Curiosity from './routes/Curiosity'
 //@withRouter
 class App extends React.Component {
   render() {
-    let { location } = this.props
+    let { location } = this.props    
     let $height2 = location.pathname === "/curiosity" ? "50px" : "241px"
     let $phone = location.pathname === "/curiosity" ? " " : "phone"
 

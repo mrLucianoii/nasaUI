@@ -25,6 +25,7 @@ function nasaPortal(state = [], action) {
   }
 }
 function curiosityStore (state = [], action){
+ console.log("inside CS");
  
   switch (action.type) {
     case GET_IMAGE_BY_SOL:

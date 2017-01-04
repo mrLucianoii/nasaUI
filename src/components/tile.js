@@ -21,11 +21,11 @@ export default class Tile extends React.Component {
 		let { camera, url, eDate, sol } = this.props
 
 		let moduleStyle = {
- 				backgroundImage:'url('+ url +')', 
-    	  backgroundRepeat: 'no-repeat',
-      	backgroundSize: 'cover',
-      	backgroundPosition: 'center center',
-				height: '243px',
+			backgroundImage:'url('+ url +')', 
+    		backgroundRepeat: 'no-repeat',
+      		backgroundSize: 'cover',
+      		backgroundPosition: 'center center',
+			height: '243px'
 			}
       return (
 				<PanelContainer id="rover">

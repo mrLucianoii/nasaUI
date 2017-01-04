@@ -1,39 +1,42 @@
 import React from 'react'
-import { connect } from 'react-redux';
+import { withRouter } from 'react-router'
 import actions from '../redux/actions';
+import { connect } from 'react-redux';
 
 import {
  Button, Form, Checkbox, ControlLabel,
  FormControl, FormGroup
 } from '@sketchpixy/rubix'
 
-@connect((state) => state)
+@connect((state)=> state)
+@withRouter
 export default class SideControler extends React.Component {
     constructor(...args) {
 	    super(...args)
         this.state = { value: '' }
+        console.log("inside Super: ", this)
     }
-    handleChange(e, store) {
-        console.log("Prop inside SControler: ", this.props)
-        this.setState({ value: e.target.value })
+    handleChange(e) {
+        let { dispatch } = this.props
+        let $target = e.target.value
+        this.setState({ value: $target })
 
-        console.log("Prop inside SControler: ", this.state.value)
+        console.log("inside handleChange with input value of: ", $target)
 
-       // let { curiosityStore, dispatch } = this.props
+        return dispatch(actions.getMarsImagesBySol($target))
 
-      //  store.dispatch(action.getMarsImagesBySol("67"))
     } 
     render(){
-
         return (
             <Form>
                 <FormGroup controlId="formControlsText">
                     <ControlLabel>(feature in development)</ControlLabel>
-	                 <FormControl 
-                     type="text" 
-                     value={this.state.value}
-                     //onChange={::this.handleChange}
-                     />
+                     <FormControl type="text" value={this.state.value} onChange={::this.handleChange}/>
+                     <ul>
+                        <li>Enter what Sol you'd like to see (Sol is a Mars Day)</li>
+                        <li>Will query all of Curiosity's cameras for that Sol (day)</li>
+                        <li>More search filters to come</li>
+                     </ul>
 	            </FormGroup>
             </Form>
         );

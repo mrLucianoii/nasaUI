@@ -18,20 +18,19 @@ import Curiosity from './routes/Curiosity'
 class App extends React.Component {
   render() {
     let { location } = this.props    
-    let $height2 = location.pathname === "/curiosity" ? "50px" : "241px"
+   // let $height2 = location.pathname === "/curiosity" ? "50px" : "241px"
     let $phone = location.pathname === "/curiosity" ? " " : "phone"
 
     let bodyStyle = {
         overflowY: 'auto',
         top: '0',
         marginTop: '52px',
-        paddingTop: $height2,
+        paddingTop: '50px',
         zIndex: '1'
     }
   //  console.log("Routes Props", this.props)
     return (
       <MainContainer {...this.props}>
-          <TopBanner />
           <Sidebar className="leave" />
           <Header/>
           <div id='body' style={bodyStyle} className={$phone} >

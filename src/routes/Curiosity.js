@@ -22,12 +22,19 @@ export default class Curiosity extends React.Component {
     return store.dispatch(actions.getMarsImagesBySol("1000"))
   
 }
+constructor(props) {
+	  super(props);
+	 // this.state = { showModal: false };
+
+  }
   render() {
+    console.log("Inside All Props-->Curiosity: ", this.props)
+
     let { curiosityStore , dispatch } = this.props
     let imageList = curiosityStore.result[0].imageList.photos
     
-    if ( imageList.length > 53 )
-      imageList = imageList.splice(0, 53)
+ /*   if ( imageList.length > 53 )
+      imageList = imageList.splice(0, 53) */
 
     // Future: Write an algorithm that splices large list and lazyloads
 
@@ -51,7 +58,9 @@ export default class Curiosity extends React.Component {
       bottom: 0
    }
     return (
+
       <div>
+      
         <Jumbotron style={jumboStyle} className="nasaJumbo" >
         <h1 style={h1Style}>Curiosity</h1>
         </Jumbotron>

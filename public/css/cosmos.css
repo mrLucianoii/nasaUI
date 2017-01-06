@@ -29,7 +29,9 @@ html.touchevents #body.phone {
     margin-right: 17px;
     width: 293px;
 }
-
+.rubix-panel-container {
+    margin-top: 27px;
+}
 @media (max-width: 320px){
 
 }

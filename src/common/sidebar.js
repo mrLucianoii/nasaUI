@@ -61,10 +61,10 @@ class DummySidebar extends React.Component {
 @withRouter
 export default class SidebarContainer extends React.Component {
   render() {
-    let $height = location.pathname === "/curiosity" ? "0" : "200px"
+//    let $height = location.pathname === "/curiosity" ? "0" : "200px"
 
     let sidebar = {
-      top: $height,
+      top: 0,
       zIndex: '3'
     }
     return (

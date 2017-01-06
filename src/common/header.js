@@ -66,14 +66,14 @@ export default class Header extends React.Component {
       paddingRight: 0
     }
     let { location } = this.props 
-    let $height = location.pathname === "/curiosity" ? "0" : "200px"
+  //  let $height = location.pathname === "/curiosity" ? "0" : "200px"
 
     return (
 
       <Grid id='navbar' style={ navStyle } >
         <Row>
           <Col xs={12}>
-            <Navbar fixedTop id='rubix-nav-header' style={{top: $height}}>
+            <Navbar fixedTop id='rubix-nav-header' style={{top: 0}}>
               <Row>
                 <Col xs={3} visible='xs'>
                   <SidebarBtn />

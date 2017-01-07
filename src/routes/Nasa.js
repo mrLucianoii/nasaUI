@@ -2,7 +2,7 @@ import React from 'react'
 import { withRouter } from 'react-router'
 import actions from '../redux/actions'
 import { connect } from 'react-redux'
-
+import Facebookmeta from '../common/Facebookmeta'
 
 import {
   Row,
@@ -19,6 +19,7 @@ import {
   Tooltip,
   Jumbotron
 } from '@sketchpixy/rubix';
+
 
 @connect((state)=> state)
 @withRouter
@@ -93,6 +94,12 @@ export default class Nasa extends React.Component {
           <PanelBody style={{
             paddingBottom: '50px'
           }}>
+            { /* facebook metadata and automated posting */ }
+            <Facebookmeta 
+              title={apod.title}
+              imageUrl={apod.url}
+              nasaText={apod.explanation}
+              />
             <Grid>
               <Row>
                 <Col xs={12} style={{paddingBottom: '25px'}}>

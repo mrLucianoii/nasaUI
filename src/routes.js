@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import { IndexRoute, Route } from 'react-router'
 import isMobileCheckPropValue from './helpers/function'
 import { Grid, Row, Col, MainContainer } from '@sketchpixy/rubix'
+import ReactGA from 'react-ga';
 
 /* Common Components */
 import TopBanner from './common/TopBanner'
@@ -43,13 +44,18 @@ class App extends React.Component {
             </Grid>
           </div>
         <Footer />
+        { ReactGA.initialize('UA-89935371-1') }
       </MainContainer>
     );
   }
 }
 
+function fireTracking() {
+    ReactGA.pageview(window.location.hash);
+}
+
 const routes = (
-  <Route path='/' component={App}>
+  <Route path='/' component={App} onUpdate={fireTracking} >
     <IndexRoute component={Nasa} />
     <Route path='/curiosity' component={Curiosity} />
   </Route>

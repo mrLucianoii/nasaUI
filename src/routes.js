@@ -29,16 +29,39 @@ class App extends React.Component {
         paddingTop: '50px',
         zIndex: '1'
     }
-  //  console.log("Routes Props", this.props)
+    window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '1220686164678583',
+              xfbml      : true,
+              version    : 'v2.8'
+            });
+          };  
+    //  console.log("Routes Props", this.props)
     return (
       <MainContainer {...this.props}>
+       
+        {(function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0]
+        if (d.getElementById(id)) {return}
+        js = d.createElement(s); js.id = id
+        js.src = "//connect.facebook.net/en_US/sdk.js"
+        fjs.parentNode.insertBefore(js, fjs)
+        }(document, 'script', 'facebook-jssdk'))}
+
           <Sidebar className="leave" />
           <Header/>
           <div id='body' style={bodyStyle} className={$phone} >
+           <div
+  className="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
             <Grid>
               <Row>
                 <Col xs={12}>
                   {this.props.children}
+                 
                 </Col>
             </Row>
             </Grid>

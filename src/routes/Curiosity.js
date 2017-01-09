@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Tile from '../components/Tile'
+import { fbMetaUpdate } from '../helpers/function'
 
 import actions from '../redux/actions';
 
@@ -32,10 +33,15 @@ constructor(props) {
 
     let { curiosityStore , dispatch } = this.props
     let imageList = curiosityStore.result[0].imageList.photos
-    
+    let curiosityMeta = {
+      title: "Meet Curiosity",
+      url: "http://wwww.ourcosmos.us/imgs/app/curiosity/curiositypano.jpg",
+      explanation: "Meet Curiosity and see his adventure on Mars."
+    }
+    fbMetaUpdate( curiosityMeta, document )
+   
  /*   if ( imageList.length > 53 )
       imageList = imageList.splice(0, 53) */
-
     // Future: Write an algorithm that splices large list and lazyloads
 
     let jumboStyle = {

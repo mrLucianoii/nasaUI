@@ -2,7 +2,7 @@ import React from 'react'
 import { withRouter } from 'react-router'
 import actions from '../redux/actions'
 import { connect } from 'react-redux'
-import Facebookmeta from '../common/Facebookmeta'
+import { fbMetaUpdate } from '../helpers/function'
 
 import {
   Row,
@@ -44,12 +44,14 @@ export default class Nasa extends React.Component {
   }
 
   render() {
-    console.log("Inside All Props-->Nasa: ", this.props)
-
+//    console.log("Inside All Props-->Nasa: ", this.props)
     let { nasaPortal, dispatch } = this.props;
 	  let { result, error } = nasaPortal
     let { apod } = result[0]
-
+    
+    // Updates the metatags for Facebook Sharing
+    fbMetaUpdate( apod, document )
+    
     let imageStyle = {
       width: "100%",
       maxWidth: "300px",
@@ -94,12 +96,6 @@ export default class Nasa extends React.Component {
           <PanelBody style={{
             paddingBottom: '50px'
           }}>
-            { /* facebook metadata and automated posting */ }
-            <Facebookmeta 
-              title={apod.title}
-              imageUrl={apod.url}
-              nasaText={apod.explanation}
-              />
             <Grid>
               <Row>
                 <Col xs={12} style={{paddingBottom: '25px'}}>

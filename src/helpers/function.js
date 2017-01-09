@@ -14,7 +14,7 @@
 *       @param routing: to passed from the this.props object to find pathname
 *       
 */
-export default function isMobileCheckPropValue( moduleName7, classString, routes){
+export function isMobileCheckPropValue( moduleName7, classString, routes){
     let _moduleName = " fucker "
     let $hideBanner = false
     let $isMobile = document.getElementsByTagName("html")[0].classList.contains( classString )
@@ -31,3 +31,13 @@ export default function isMobileCheckPropValue( moduleName7, classString, routes
     //Failed Logic, but I'm saving this 
 }
 
+export function fbMetaUpdate ( dataObject, document ){
+    console.log("Inside ftMeta Func with obj: ", dataObject)
+    console.log("Inside ftMeta Func with obj: ", document)
+    
+    document.getElementsByTagName('meta')["og:image"].content = dataObject.url
+    document.getElementsByTagName('meta').description.content = dataObject.explanation
+    document.getElementsByTagName('meta')["application-name"].content = dataObject.title
+
+    return true
+}

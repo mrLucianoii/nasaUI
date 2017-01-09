@@ -16,6 +16,7 @@ import Footer from './common/footer'
 import Nasa from './routes/Nasa'
 import Curiosity from './routes/Curiosity'
 
+
 class App extends React.Component {
   render() {
     let { location } = this.props    
@@ -29,6 +30,8 @@ class App extends React.Component {
         paddingTop: '50px',
         zIndex: '1'
     }
+    ReactGA.initialize('UA-89935371-1');
+
   //  console.log("Routes Props", this.props)
     return (
       <MainContainer {...this.props}>
@@ -44,14 +47,14 @@ class App extends React.Component {
             </Grid>
           </div>
         <Footer />
-        { ReactGA.initialize('UA-89935371-1') }
       </MainContainer>
     );
   }
 }
 
 function fireTracking() {
-    ReactGA.pageview(window.location.hash);
+  ReactGA.set({ page: window.location.pathname });
+  ReactGA.pageview(window.location.pathname);
 }
 
 const routes = (

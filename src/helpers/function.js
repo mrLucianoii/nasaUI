@@ -36,7 +36,7 @@ export function fbMetaUpdate ( dataObject, document ){
     console.log("Inside ftMeta Func with obj: ", document)
     
     document.getElementsByTagName('meta')["og:image"].content = dataObject.url
-    document.getElementsByTagName('meta').description.content = dataObject.explanation
+    document.getElementsByTagName('meta')["og:description"].content = dataObject.explanation
     document.getElementsByTagName('meta')["application-name"].content = dataObject.title
 
     return true

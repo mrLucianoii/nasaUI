@@ -43,24 +43,16 @@ class App extends React.Component {
   //  console.log("Routes Props", this.props)
     return (
       <MainContainer {...this.props}>
-       
-        {(function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0]
-        if (d.getElementById(id)) {return}
-        js = d.createElement(s); js.id = id
-        js.src = "//connect.facebook.net/en_US/sdk.js"
-        fjs.parentNode.insertBefore(js, fjs)
-        }(document, 'script', 'facebook-jssdk'))}
 
           <Sidebar className="leave" />
           <Header/>
           <div id='body' style={bodyStyle} className={$phone} >
            <div
-  className="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
+            className="fb-like"
+            data-share="true"
+            data-width="450"
+            data-show-faces="true">
+          </div>
             <Grid>
               <Row>
                 <Col xs={12}>
@@ -85,6 +77,7 @@ const routes = (
   <Route path='/' component={App} onUpdate={fireTracking} >
     <IndexRoute component={Nasa} />
     <Route path='/curiosity' component={Curiosity} />
+    
   </Route>
 );
 

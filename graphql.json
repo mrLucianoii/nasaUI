@@ -1,8 +1,0 @@
-{
-  "development": {
-    "endpoint": "http://localhost:8080/graphql"
-  },
-  "production": {
-    "endpoint": "https://arcane-fortress-62836.herokuapp.com/graphql"
-  }
-}
